@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+
+const tiles = [
+  '/images/personal/photo-1.png',
+  '/images/personal/photo-2.png',
+  '/images/personal/photo-3.png',
+  '/images/personal/photo-4.png',
+  '/images/writing/writing-1.png',
+  '/images/writing/writing-2.png',
+  '/images/writing/writing-3.png',
+  '/images/writing/writing-4.png',
+];
+---
+
+<Base title="About" activePage="about">
+  <div class="about-wrap">
+    <div class="about">
+      <p>My background is interdisciplinary — I started in visual arts and music, got my Master's in Interdisciplinary Design, and that's really where I shifted from pure aesthetics into systems thinking, research, and strategy. That foundation is still very much how I approach product work today.</p>
+
+      <p>In my early career I worked across branding and agency environments — healthcare nonprofits, startups, and then as a designer on the eBay account at an agency — where I built my instinct for designing within established systems and moving fast in cross-functional teams.</p>
+
+      <p>The last few years I was at Block — Square's parent company — I was embedded on a web and product team where marketing and product experience were deeply connected. In practice, that meant all designers bridging web surfaces with in-product journeys, working directly with PMs and engineers on acquisition, onboarding, and global launches.</p>
+
+      <p>Outside of work, I play violin and volunteer with the Strings Attached Orchestra, I volunteer with the RGD on the D&amp;I committee to give back to the design community that gives to me, and I am presently enjoying a combination of hot yoga and Muay Thai for some activity.</p>
+    </div>
+
+    <div class="about-tiles">
+      {tiles.map((src) => (
+        <div class="about-tile">
+          <img src={src} alt="" loading="lazy" decoding="async" />
+        </div>
+      ))}
+    </div>
+  </div>
+</Base>

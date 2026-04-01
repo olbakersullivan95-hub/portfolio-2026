@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<Base title="Portfolio" activePage="portfolio">
+  <div class="grid grid--portfolio" id="portfolio-grid">
+    {projects.map((project) => (
+      <a
+        href={`/work/${project.slug}`}
+        class="grid__item"
+        data-categories={JSON.stringify(project.data.categories)}
+      >
+        <img
+          src={project.data.coverImage}
+          alt={project.data.title}
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="grid__item-label">/{project.slug}</span>
+      </a>
+    ))}
+  </div>
+</Base>
+
+<script>
+  const filterTags = document.querySelectorAll<HTMLElement>('.nav-filters__tag');
+  const gridItems = document.querySelectorAll<HTMLElement>('#portfolio-grid .grid__item');
+  const activeFilters = new Set<string>();
+
+  filterTags.forEach((tag) => {
+    tag.addEventListener('click', () => {
+      const filter = tag.dataset.filter ?? '';
+      if (activeFilters.has(filter)) {
+        activeFilters.delete(filter);
+        tag.classList.remove('is-active');
+      } else {
+        activeFilters.add(filter);
+        tag.classList.add('is-active');
+      }
+      applyFilters();
+    });
+  });
+
+  function applyFilters() {
+    gridItems.forEach((item) => {
+      if (activeFilters.size === 0) {
+        item.style.display = '';
+        return;
+      }
+      const cats: string[] = JSON.parse(item.dataset.categories ?? '[]');
+      const match = cats.some((c) => activeFilters.has(c));
+      item.style.display = match ? '' : 'none';
+    });
+  }
+</script>

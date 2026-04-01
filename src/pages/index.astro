@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+// Photography and writing tiles — appended after portfolio projects
+const extraTiles = [
+  { src: '/images/personal/photo-1.png', label: '/photography' },
+  { src: '/images/personal/photo-2.png', label: '/photography' },
+  { src: '/images/personal/photo-3.png', label: '/photography' },
+  { src: '/images/personal/photo-4.png', label: '/photography' },
+  { src: '/images/writing/writing-1.png', label: 'Designing Paths: Andrew Reutsky shares his story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-andrew-reutsky-shares-his-story-as-an-immigrant-designer' },
+  { src: '/images/writing/writing-2.png', label: 'Designing Paths: Anika Aggarwal Associate RGD on her journey as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-anika-aggarwal-shares-her-experiences-as-an-immigrant-designer' },
+  { src: '/images/writing/writing-3.png', label: 'Designing Paths: Maria Sinisterra RGD shares her story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-maria-sinisterra-rgd-shares-her-story-as-an-immigrant-designer' },
+  { src: '/images/writing/writing-4.png', label: 'Designing Paths: Giovanni Ferretti shares his story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-giovanni-ferretti-shares-his-story-as-an-immigrant-designer' },
+];
+
+const NUM_COLS = 6;
+
+// Build column arrays: portfolio projects first, then extra tiles, all by index % 6
+const allItems = [
+  ...projects.map(p => ({ src: p.data.coverImage, label: `/${p.slug}`, href: `/work/${p.slug}` })),
+  ...extraTiles.map(t => ({ src: t.src, label: t.label, href: t.href ?? null })),
+];
+
+const columns = Array.from({ length: NUM_COLS }, (_, i) =>
+  allItems.filter((_, j) => j % NUM_COLS === i)
+);
+---
+
+<Base title="Home" activePage="home">
+  <div class="grid grid--home">
+    {columns.map((col) => (
+      <div class="home-col">
+        {col.map((item) => (
+          item.href ? (
+            <a href={item.href} class="grid__item" target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
+              <img src={item.src} alt={item.label} loading="lazy" decoding="async" />
+              <span class="grid__item-label">{item.label}</span>
+            </a>
+          ) : (
+            <div class="grid__item grid__item--personal">
+              <img src={item.src} alt={item.label} loading="lazy" decoding="async" />
+              <span class="grid__item-label">{item.label}</span>
+            </div>
+          )
+        ))}
+      </div>
+    ))}
+  </div>
+</Base>

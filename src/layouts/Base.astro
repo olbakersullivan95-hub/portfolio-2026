@@ -1,0 +1,61 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  activePage?: 'home' | 'about' | 'portfolio' | 'shop';
+}
+const {
+  title,
+  description = 'Olivia Baker-Sullivan — Designer',
+  activePage,
+} = Astro.props;
+
+const filters = ['UX', 'Brand', 'Product', 'Photography', 'Painting', 'Video', 'Animation', 'Writing'];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} — Olivia Baker-Sullivan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,opsz,wdth,wght@0,6..24,62.5..100,100..900;1,6..24,62.5..100,100..900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__left">
+        <img src="/obs-logo.svg" alt="OBS" class="logo" width="39" height="18" />
+        <nav class="nav-main" aria-label="Main navigation">
+          <a href="/" class:list={['nav-main__link', { 'is-active': activePage === 'home' }]}>Home</a>
+          <a href="/about" class:list={['nav-main__link', { 'is-active': activePage === 'about' }]}>About</a>
+          <a href="/work" class:list={['nav-main__link', { 'is-active': activePage === 'portfolio' }]}>Portfolio</a>
+          <a href="/shop" class:list={['nav-main__link', { 'is-active': activePage === 'shop' }]}>Shop</a>
+        </nav>
+      </div>
+      <nav class="nav-filters" aria-label="Filter by category">
+        {filters.map((tag) => (
+          <span class="nav-filters__tag" data-filter={tag}>{tag}</span>
+        ))}
+      </nav>
+    </header>
+
+    <main class="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <img src="/obs-logo.svg" alt="OBS" width="39" height="18" />
+      <ul class="site-footer__links">
+        <li><a href="https://www.behance.net/olivialbaker" target="_blank" rel="noopener">Behance</a></li>
+        <li><a href="https://www.linkedin.com/in/olivia-baker-sullivan/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/obs_designs/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="mailto:olbakersullivan95@gmail.com">Email</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

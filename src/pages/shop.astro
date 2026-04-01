@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+
+const driveUrl = 'https://drive.google.com/drive/folders/1UY1JY85rCcH3usn5KwWURU7AQBwgvEXX?usp=drive_link';
+
+const mockups = Array.from({ length: 12 }, (_, i) => ({
+  src: `/images/shop/mockup-${i + 1}.png`,
+  alt: `Mockups in the Wild—${i + 1}`,
+  name: `Mockups in the Wild—${i + 1}`,
+}));
+---
+
+<Base title="Shop" activePage="shop">
+  <div class="grid grid--shop" id="shop-grid">
+    {mockups.map((item, i) => (
+      <div class="grid__item">
+        <img
+          src={item.src}
+          alt={item.alt}
+          loading={i < 6 ? 'eager' : 'lazy'}
+          decoding="async"
+        />
+        <span class="shop-grid__name">{item.name}</span>
+        <a
+          href={driveUrl}
+          target="_blank"
+          rel="noopener"
+          class="shop-grid__cta"
+        >Download on Google Drive →</a>
+      </div>
+    ))}
+  </div>
+</Base>

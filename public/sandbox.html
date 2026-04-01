@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layout Sandbox</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Noto Sans", sans-serif;
+      background: #E9E3D7;
+      color: #1a1a1a;
+      padding: 40px;
+      font-size: 14px;
+    }
+
+    h1 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    p  { font-size: 0.8rem; color: #555; margin-bottom: 24px; }
+
+    /* ---- Controls ---- */
+    .controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .control-group label {
+      font-size: 0.75rem;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 4px;
+    }
+
+    button {
+      background: none;
+      border: 1px solid #1a1a1a;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      color: #1a1a1a;
+    }
+
+    button.active {
+      background: #1a1a1a;
+      color: #E9E3D7;
+    }
+
+    /* ---- Grid ---- */
+    .grid-wrap {
+      overflow: hidden;
+    }
+
+    .grid {
+      display: grid;
+      gap: 0;
+      align-items: start;
+    }
+
+    /* ---- Block ---- */
+    .block {
+      background: #c8c0b0;
+      cursor: grab;
+      position: relative;
+      user-select: none;
+    }
+
+    .block:active { cursor: grabbing; }
+    .block.drag-over { outline: 2px dashed #1a1a1a; }
+
+    .block__img {
+      width: 100%;
+      display: block;
+    }
+
+    .block__label {
+      font-size: 0.8rem;
+      overflow: hidden;
+      transition: max-height 0.25s ease, padding 0.25s ease;
+    }
+
+    .block__label.always-visible {
+      max-height: none;
+      padding: 8px 0;
+    }
+
+    .block__label.hidden { max-height: 0; padding: 0; }
+
+    .grid:hover .block:not(:hover) { opacity: 0.5; }
+    .block__label.hover-reveal { max-height: 0; padding: 0; }
+    .grid .block:hover .block__label.hover-reveal {
+      max-height: 4rem;
+      padding: 40px 0;
+    }
+
+    /* ---- Output ---- */
+    .output {
+      margin-top: 40px;
+      padding: 20px;
+      border: 1px solid rgba(0,0,0,0.15);
+      font-size: 0.8rem;
+      color: #555;
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+
+    .output strong { color: #1a1a1a; }
+  </style>
+</head>
+<body>
+
+  <h1>Layout Sandbox</h1>
+  <p>Adjust the controls to match what you want, then share a screenshot or describe what you set.</p>
+
+  <div class="controls">
+    <div class="control-group">
+      <label>Columns</label>
+      <div class="btn-row" id="cols-btns">
+        <button onclick="setCols(2)">2</button>
+        <button onclick="setCols(3)">3</button>
+        <button onclick="setCols(4)">4</button>
+        <button onclick="setCols(6)" class="active">6</button>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label>Column gap</label>
+      <div class="btn-row" id="cgap-btns">
+        <button onclick="setCGap(0)">None</button>
+        <button onclick="setCGap(10)">10px</button>
+        <button onclick="setCGap(20)" class="active">20px</button>
+        <button onclick="setCGap(40)">40px</button>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label>Row gap</label>
+      <div class="btn-row" id="rgap-btns">
+        <button onclick="setRGap(0)" class="active">None</button>
+        <button onclick="setRGap(10)">10px</button>
+        <button onclick="setRGap(20)">20px</button>
+        <button onclick="setRGap(40)">40px</button>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label>Labels</label>
+      <div class="btn-row" id="label-btns">
+        <button onclick="setLabels('hidden')" class="active">Hidden</button>
+        <button onclick="setLabels('hover')">On hover</button>
+        <button onclick="setLabels('always')">Always</button>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label>Image ratio</label>
+      <div class="btn-row" id="ratio-btns">
+        <button onclick="setRatio('3/4')" class="active">3:4 portrait</button>
+        <button onclick="setRatio('4/3')">4:3 landscape</button>
+        <button onclick="setRatio('mixed')">Mixed</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-wrap">
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <div class="output" id="output"></div>
+
+  <script>
+    const slugs = [
+      '/square-industry', '/vpos', '/x2c', '/square-50',
+      '/ebay-email-templates', '/small-business-saturday',
+      '/dj-skee', '/bodies-and-sound', '/nscad-es-brand',
+      '/nscad-es-web', '/wheelhouse', '/ttc-redesign', '/everbloom'
+    ];
+
+    const ratios = [
+      '3/4','4/3','3/4','3/4','4/3','3/4',
+      '3/4','4/3','3/4','4/3','3/4','3/4','3/4'
+    ];
+
+    let state = {
+      cols: 6,
+      cgap: 20,
+      rgap: 0,
+      labels: 'hidden',
+      ratio: '3/4',
+    };
+
+    const grid = document.getElementById('grid');
+
+    function render() {
+      grid.style.gridTemplateColumns = `repeat(${state.cols}, 1fr)`;
+      grid.style.columnGap = state.cgap + 'px';
+      grid.style.rowGap = state.rgap + 'px';
+
+      grid.innerHTML = '';
+      slugs.forEach((slug, i) => {
+        const ratio = state.ratio === 'mixed' ? ratios[i] : state.ratio;
+        const [w, h] = ratio.split('/').map(Number);
+        const pct = (h / w * 100).toFixed(1);
+
+        const block = document.createElement('div');
+        block.className = 'block';
+        block.draggable = true;
+        block.dataset.index = i;
+
+        block.innerHTML = `
+          <div class="block__img" style="aspect-ratio:${w}/${h}; background:#b8b0a0; display:flex; align-items:center; justify-content:center; color:#888; font-size:0.75rem;">${w}:${h}</div>
+          <div class="block__label ${labelClass()}">${slug}</div>
+        `;
+
+        grid.appendChild(block);
+      });
+
+      updateOutput();
+    }
+
+    function labelClass() {
+      if (state.labels === 'hidden') return 'hidden';
+      if (state.labels === 'hover') return 'hover-reveal';
+      return 'always-visible';
+    }
+
+    function setCols(n) {
+      state.cols = n;
+      setActive('cols-btns', n);
+      render();
+    }
+
+    function setCGap(n) {
+      state.cgap = n;
+      setActive('cgap-btns', n);
+      render();
+    }
+
+    function setRGap(n) {
+      state.rgap = n;
+      setActive('rgap-btns', n);
+      render();
+    }
+
+    function setLabels(v) {
+      state.labels = v;
+      setActive('label-btns', v);
+      render();
+    }
+
+    function setRatio(v) {
+      state.ratio = v;
+      setActive('ratio-btns', v);
+      render();
+    }
+
+    function setActive(groupId, val) {
+      const btns = document.getElementById(groupId).querySelectorAll('button');
+      btns.forEach(b => {
+        b.classList.toggle('active', b.textContent.trim() === String(val) || b.onclick?.toString().includes(`'${val}'`) || b.onclick?.toString().includes(`(${val})`));
+      });
+    }
+
+    function updateOutput() {
+      const out = document.getElementById('output');
+      out.innerHTML = `<strong>Current settings:</strong>\n` +
+        `  Columns:    ${state.cols}\n` +
+        `  Column gap: ${state.cgap}px\n` +
+        `  Row gap:    ${state.rgap}px\n` +
+        `  Labels:     ${state.labels}\n` +
+        `  Ratio:      ${state.ratio}\n\n` +
+        `Share these settings (or a screenshot) and I'll match the CSS to it.`;
+    }
+
+    render();
+  </script>
+</body>
+</html>
