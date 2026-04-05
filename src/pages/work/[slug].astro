@@ -61,7 +61,10 @@ const conclusionParagraphs = data.conclusion.trim().split(/\n\n+/);
           <img
             src={data.images[0].src}
             alt={data.images[0].alt}
+            width="1536"
+            height="2048"
             loading="eager"
+            fetchpriority="high"
           />
         </div>
       </div>
@@ -94,7 +97,7 @@ const conclusionParagraphs = data.conclusion.trim().split(/\n\n+/);
             data.images[1].src.endsWith('.mp4') || data.images[1].src.endsWith('.webm') ? (
               <video src={data.images[1].src} autoplay loop muted playsinline style="width:100%;display:block;" />
             ) : (
-              <img src={data.images[1].src} alt={data.images[1].alt} loading="lazy" />
+              <img src={data.images[1].src} alt={data.images[1].alt} width="1536" height="2048" loading="lazy" />
             )
           )}
         </div>
@@ -127,7 +130,7 @@ const conclusionParagraphs = data.conclusion.trim().split(/\n\n+/);
             data.images[2].src.endsWith('.mp4') || data.images[2].src.endsWith('.webm') ? (
               <video src={data.images[2].src} autoplay loop muted playsinline style="width:100%;display:block;" />
             ) : (
-              <img src={data.images[2].src} alt={data.images[2].alt} loading="lazy" />
+              <img src={data.images[2].src} alt={data.images[2].alt} width="1536" height="2048" loading="lazy" />
             )
           )}
         </div>
@@ -145,6 +148,8 @@ const conclusionParagraphs = data.conclusion.trim().split(/\n\n+/);
             <img
               src={project.data.coverImage}
               alt={project.data.title}
+              width="1536"
+              height="2048"
               loading="lazy"
             />
             <span>{project.data.title}</span>

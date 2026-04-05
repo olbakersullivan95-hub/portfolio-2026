@@ -137,6 +137,8 @@ img { display: block; width: 100%; }
 
 .grid--home .grid__item img {
   width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
   display: block;
 }
 
@@ -181,7 +183,7 @@ img { display: block; width: 100%; }
   transition: opacity 0.2s ease;
 }
 
-.grid--portfolio .grid__item img { width: 100%; display: block; }
+.grid--portfolio .grid__item img { width: 100%; height: auto; aspect-ratio: 3 / 4; display: block; }
 
 .grid--portfolio .grid__item-label {
   font-size: var(--text-sm);

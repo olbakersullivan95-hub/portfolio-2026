@@ -8,22 +8,22 @@ const projects = (await getCollection('projects')).sort(
 
 // Photography and writing tiles — appended after portfolio projects
 const extraTiles = [
-  { src: '/images/personal/photo-1.webp', label: '/photography', categories: ['Photography'] },
-  { src: '/images/personal/photo-2.webp', label: '/photography', categories: ['Photography'] },
-  { src: '/images/personal/photo-3.webp', label: '/photography', categories: ['Photography'] },
-  { src: '/images/personal/photo-4.webp', label: '/photography', categories: ['Photography'] },
-  { src: '/images/writing/writing-1.webp', label: 'Designing Paths: Andrew Reutsky shares his story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-andrew-reutsky-shares-his-story-as-an-immigrant-designer', categories: ['Writing'] },
-  { src: '/images/writing/writing-2.webp', label: 'Designing Paths: Anika Aggarwal Associate RGD on her journey as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-anika-aggarwal-shares-her-experiences-as-an-immigrant-designer', categories: ['Writing'] },
-  { src: '/images/writing/writing-3.webp', label: 'Designing Paths: Maria Sinisterra RGD shares her story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-maria-sinisterra-rgd-shares-her-story-as-an-immigrant-designer', categories: ['Writing'] },
-  { src: '/images/writing/writing-4.webp', label: 'Designing Paths: Giovanni Ferretti shares his story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-giovanni-ferretti-shares-his-story-as-an-immigrant-designer', categories: ['Writing'] },
+  { src: '/images/personal/photo-1.webp', label: '/photography', alt: 'Photography', categories: ['Photography'], w: 1536, h: 1536 },
+  { src: '/images/personal/photo-2.webp', label: '/photography', alt: 'Photography', categories: ['Photography'], w: 1536, h: 1536 },
+  { src: '/images/personal/photo-3.webp', label: '/photography', alt: 'Photography', categories: ['Photography'], w: 1536, h: 1536 },
+  { src: '/images/personal/photo-4.webp', label: '/photography', alt: 'Photography', categories: ['Photography'], w: 1536, h: 1536 },
+  { src: '/images/writing/writing-1.webp', label: 'Designing Paths: Andrew Reutsky shares his story as an immigrant designer', alt: 'Designing Paths: Andrew Reutsky shares his story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-andrew-reutsky-shares-his-story-as-an-immigrant-designer', categories: ['Writing'], w: 1536, h: 1536 },
+  { src: '/images/writing/writing-2.webp', label: 'Designing Paths: Anika Aggarwal Associate RGD on her journey as an immigrant designer', alt: 'Designing Paths: Anika Aggarwal Associate RGD on her journey as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-anika-aggarwal-shares-her-experiences-as-an-immigrant-designer', categories: ['Writing'], w: 1536, h: 1536 },
+  { src: '/images/writing/writing-3.webp', label: 'Designing Paths: Maria Sinisterra RGD shares her story as an immigrant designer', alt: 'Designing Paths: Maria Sinisterra RGD shares her story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-maria-sinisterra-rgd-shares-her-story-as-an-immigrant-designer', categories: ['Writing'], w: 1536, h: 1536 },
+  { src: '/images/writing/writing-4.webp', label: 'Designing Paths: Giovanni Ferretti shares his story as an immigrant designer', alt: 'Designing Paths: Giovanni Ferretti shares his story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-giovanni-ferretti-shares-his-story-as-an-immigrant-designer', categories: ['Writing'], w: 1536, h: 1536 },
 ];
 
 const NUM_COLS = 6;
 
 // Build column arrays: portfolio projects first, then extra tiles, all by index % 6
 const allItems = [
-  ...projects.map(p => ({ src: p.data.coverImage, label: `/${p.slug}`, href: `/work/${p.slug}`, categories: p.data.categories })),
-  ...extraTiles.map(t => ({ src: t.src, label: t.label, href: t.href ?? null, categories: t.categories })),
+  ...projects.map(p => ({ src: p.data.coverImage, label: `/${p.slug}`, alt: p.data.title, href: `/work/${p.slug}`, categories: p.data.categories, w: 1536, h: 2048 })),
+  ...extraTiles.map(t => ({ src: t.src, label: t.label, alt: t.alt, href: t.href ?? null, categories: t.categories, w: t.w, h: t.h })),
 ];
 
 const columns = Array.from({ length: NUM_COLS }, (_, i) =>
@@ -38,12 +38,12 @@ const columns = Array.from({ length: NUM_COLS }, (_, i) =>
         {col.map((item) => (
           item.href ? (
             <a href={item.href} class="grid__item" data-categories={JSON.stringify(item.categories)} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
-              <img src={item.src} alt={item.label} loading="lazy" decoding="async" />
+              <img src={item.src} alt={item.alt} width={item.w} height={item.h} loading="lazy" decoding="async" />
               <span class="grid__item-label">{item.label}</span>
             </a>
           ) : (
             <div class="grid__item grid__item--personal" data-categories={JSON.stringify(item.categories)}>
-              <img src={item.src} alt={item.label} loading="lazy" decoding="async" />
+              <img src={item.src} alt={item.alt} width={item.w} height={item.h} loading="lazy" decoding="async" />
               <span class="grid__item-label">{item.label}</span>
             </div>
           )
