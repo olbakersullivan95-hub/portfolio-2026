@@ -5,13 +5,13 @@ employer: Block / Square
 period: "2025"
 tags: ["Systems Thinking", "Production", "QA", "Stakeholder Mgmt", "Web"]
 categories: ["UX", "Product"]
-coverImage: /images/projects/block-1/img-1.png
+coverImage: /images/projects/block-1/img-1.webp
 images:
-  - src: /images/projects/block-1/img-1.png
+  - src: /images/projects/block-1/img-1.webp
     alt: Square industry page redesign
   - src: /images/projects/block-1/img-2.mp4
     alt: Square industry page redesign, process
-  - src: /images/projects/block-1/img-3.png
+  - src: /images/projects/block-1/img-3.webp
     alt: Square industry page redesign, detail
 stats:
   - value: "10x"

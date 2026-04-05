@@ -5,13 +5,13 @@ employer: eBay North America via FEED/DEPT
 period: "2021"
 tags: ["Social Design", "Animation", "Campaign", "Content Strategy", "Topical Creative"]
 categories: ["Animation", "Video"]
-coverImage: /images/projects/ebay-2/img-1.png
+coverImage: /images/projects/ebay-2/img-1.webp
 images:
-  - src: /images/projects/ebay-2/img-1.png
+  - src: /images/projects/ebay-2/img-1.webp
     alt: eBay North America social post, Ted Lasso Halloween costume
-  - src: /images/projects/ebay-2/img-2.png
+  - src: /images/projects/ebay-2/img-2.webp
     alt: eBay North America social post, DJ Skee collector cards animation
-  - src: /images/projects/ebay-2/img-3.png
+  - src: /images/projects/ebay-2/img-3.webp
     alt: eBay North America social post, Oreo Cop the Drop series
 stats:
   - value: "1.5 wk"

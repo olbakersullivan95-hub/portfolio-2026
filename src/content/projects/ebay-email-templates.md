@@ -5,13 +5,13 @@ employer: eBay North America via FEED/DEPT
 period: "2022"
 tags: ["Design Systems", "Templates", "Sprint Design", "Responsive Email", "Mentorship"]
 categories: ["UX", "Brand", "Product"]
-coverImage: /images/projects/ebay-1/img-1.png
+coverImage: /images/projects/ebay-1/img-1.webp
 images:
-  - src: /images/projects/ebay-1/img-1.png
+  - src: /images/projects/ebay-1/img-1.webp
     alt: eBay email template system
-  - src: /images/projects/ebay-1/img-2.png
+  - src: /images/projects/ebay-1/img-2.webp
     alt: eBay email template system, process
-  - src: /images/projects/ebay-1/img-3.png
+  - src: /images/projects/ebay-1/img-3.webp
     alt: eBay email template system, detail
 stats:
   - value: "26+"

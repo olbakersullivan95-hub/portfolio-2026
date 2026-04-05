@@ -5,9 +5,9 @@ employer: Block / Square
 period: "2024"
 tags: ["Conversion Optimization", "Animation", "Localization", "A/B Testing", "Web"]
 categories: ["UX", "Product", "Animation"]
-coverImage: /images/projects/block-2/img-1.png
+coverImage: /images/projects/block-2/img-1.webp
 images:
-  - src: /images/projects/block-2/img-1.png
+  - src: /images/projects/block-2/img-1.webp
     alt: VPOS pages
   - src: /images/projects/block-2/img-2.gif
     alt: VPOS pages, process

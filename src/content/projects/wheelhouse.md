@@ -5,13 +5,13 @@ employer: Freelance
 period: "2020"
 tags: ["Logo Design", "Brand Identity", "Freelance", "Still in Use"]
 categories: ["Brand"]
-coverImage: /images/projects/wheelhouse/img-1.png
+coverImage: /images/projects/wheelhouse/img-1.webp
 images:
-  - src: /images/projects/wheelhouse/img-1.png
+  - src: /images/projects/wheelhouse/img-1.webp
     alt: Wheelhouse Design Build logo
-  - src: /images/projects/wheelhouse/img-2.png
+  - src: /images/projects/wheelhouse/img-2.webp
     alt: Wheelhouse Design Build, process
-  - src: /images/projects/wheelhouse/img-3.png
+  - src: /images/projects/wheelhouse/img-3.webp
     alt: Wheelhouse Design Build, brand detail
 order: 11
 intro: |

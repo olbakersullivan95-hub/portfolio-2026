@@ -5,13 +5,13 @@ employer: Product Design Mentorship Program
 period: "Spring 2025"
 tags: ["Product Design", "Accessibility", "Mentorship", "Figma", "UX/UI"]
 categories: ["UX", "Product", "Brand"]
-coverImage: /images/projects/ttc/img-1.png
+coverImage: /images/projects/ttc/img-1.webp
 images:
-  - src: /images/projects/ttc/img-1.png
+  - src: /images/projects/ttc/img-1.webp
     alt: TTC redesign
-  - src: /images/projects/ttc/img-2.png
+  - src: /images/projects/ttc/img-2.webp
     alt: TTC redesign, process
-  - src: /images/projects/ttc/img-3.png
+  - src: /images/projects/ttc/img-3.webp
     alt: TTC redesign, detail
 stats:
   - value: "Full"

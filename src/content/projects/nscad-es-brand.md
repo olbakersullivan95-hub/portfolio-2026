@@ -5,13 +5,13 @@ employer: NSCAD University, Freelance
 period: "2020"
 tags: ["Brand Identity", "Design Systems", "Web", "Templates", "Still in Use"]
 categories: ["Brand"]
-coverImage: /images/projects/nscad-es-brand/img-1.png
+coverImage: /images/projects/nscad-es-brand/img-1.webp
 images:
-  - src: /images/projects/nscad-es-brand/img-1.png
+  - src: /images/projects/nscad-es-brand/img-1.webp
     alt: NSCAD Extended Studies brand
-  - src: /images/projects/nscad-es-brand/img-2.png
+  - src: /images/projects/nscad-es-brand/img-2.webp
     alt: NSCAD Extended Studies brand, process
-  - src: /images/projects/nscad-es-brand/img-3.png
+  - src: /images/projects/nscad-es-brand/img-3.webp
     alt: NSCAD Extended Studies brand, detail
 stats:
   - value: "6+"

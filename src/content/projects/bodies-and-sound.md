@@ -5,13 +5,13 @@ employer: NSCAD University, MDes Thesis
 period: "2020"
 tags: ["Multidisciplinary", "Product Design", "Research", "Graphic Design", "3D Print"]
 categories: ["Product", "Photography", "Writing"]
-coverImage: /images/projects/thesis/img-1.png
+coverImage: /images/projects/thesis/img-1.webp
 images:
-  - src: /images/projects/thesis/img-1.png
+  - src: /images/projects/thesis/img-1.webp
     alt: Bodies and Sound thesis
-  - src: /images/projects/thesis/img-2.png
+  - src: /images/projects/thesis/img-2.webp
     alt: Bodies and Sound, process
-  - src: /images/projects/thesis/img-3.png
+  - src: /images/projects/thesis/img-3.webp
     alt: Bodies and Sound, detail
 stats:
   - value: "5"

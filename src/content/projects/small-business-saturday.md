@@ -5,13 +5,13 @@ employer: eBay North America via FEED/DEPT
 period: "2022"
 tags: ["Landing Page", "Product Design", "UX", "Client Work"]
 categories: ["UX", "Product"]
-coverImage: /images/projects/ebay-3/img-1.png
+coverImage: /images/projects/ebay-3/img-1.webp
 images:
-  - src: /images/projects/ebay-3/img-1.png
+  - src: /images/projects/ebay-3/img-1.webp
     alt: Small Business Saturday landing page
-  - src: /images/projects/ebay-3/img-2.png
+  - src: /images/projects/ebay-3/img-2.webp
     alt: Small Business Saturday, process
-  - src: /images/projects/ebay-3/img-3.png
+  - src: /images/projects/ebay-3/img-3.webp
     alt: Small Business Saturday, detail
 stats:
   - value: "Multi"

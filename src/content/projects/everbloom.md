@@ -5,13 +5,13 @@ employer: Freelance
 period: "2020"
 tags: ["Brand Identity", "Logo Design", "Wellness", "Freelance"]
 categories: ["Brand"]
-coverImage: /images/projects/everbloom/img-1.png
+coverImage: /images/projects/everbloom/img-1.webp
 images:
-  - src: /images/projects/everbloom/img-1.png
+  - src: /images/projects/everbloom/img-1.webp
     alt: Everbloom Studio brand identity
-  - src: /images/projects/everbloom/img-2.png
+  - src: /images/projects/everbloom/img-2.webp
     alt: Everbloom Studio, process
-  - src: /images/projects/everbloom/img-3.png
+  - src: /images/projects/everbloom/img-3.webp
     alt: Everbloom Studio, detail
 order: 13
 intro: |

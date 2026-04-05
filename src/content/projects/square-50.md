@@ -5,11 +5,11 @@ employer: Block / Square
 period: "2023"
 tags: ["Leadership", "Animation", "Campaign", "Onboarding", "Global Scale"]
 categories: ["Animation", "Product"]
-coverImage: /images/projects/block-4/img-1.png
+coverImage: /images/projects/block-4/img-1.webp
 images:
-  - src: /images/projects/block-4/img-1.png
+  - src: /images/projects/block-4/img-1.webp
     alt: Square 50 Awards Campaign
-  - src: /images/projects/block-4/img-2.png
+  - src: /images/projects/block-4/img-2.webp
     alt: Square 50 Awards, process
   - src: /images/projects/block-4/img-3.mp4
     alt: Square 50 Awards, detail

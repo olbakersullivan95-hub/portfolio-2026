@@ -5,13 +5,13 @@ employer: NSCAD University, Freelance
 period: "2021"
 tags: ["Web Design", "Hand-Coded CSS", "Brand Identity", "Still in Use", "Web"]
 categories: ["UX", "Brand"]
-coverImage: /images/projects/nscad-es-web/img-1.png
+coverImage: /images/projects/nscad-es-web/img-1.webp
 images:
-  - src: /images/projects/nscad-es-web/img-1.png
+  - src: /images/projects/nscad-es-web/img-1.webp
     alt: NSCAD Extended Studies website
-  - src: /images/projects/nscad-es-web/img-2.png
+  - src: /images/projects/nscad-es-web/img-2.webp
     alt: NSCAD Extended Studies website, process
-  - src: /images/projects/nscad-es-web/img-3.png
+  - src: /images/projects/nscad-es-web/img-3.webp
     alt: NSCAD Extended Studies website, detail
 stats:
   - value: "6+"

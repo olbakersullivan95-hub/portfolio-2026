@@ -5,13 +5,13 @@ employer: Block / Square
 period: "2026"
 tags: ["Project Leadership", "Global Launch", "QA Systems", "Localization", "X-Functional"]
 categories: ["UX", "Product"]
-coverImage: /images/projects/block-3/img-1.png
+coverImage: /images/projects/block-3/img-1.webp
 images:
-  - src: /images/projects/block-3/img-1.png
+  - src: /images/projects/block-3/img-1.webp
     alt: X2C hardware launch
   - src: /images/projects/block-3/img-2.webm
     alt: X2C hardware launch, process
-  - src: /images/projects/block-3/img-3.png
+  - src: /images/projects/block-3/img-3.webp
     alt: X2C hardware launch, detail
 stats:
   - value: "20+"
