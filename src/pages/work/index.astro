@@ -18,8 +18,6 @@ const projects = (await getCollection('projects')).sort(
         <img
           src={project.data.coverImage}
           alt={project.data.title}
-          width="1536"
-          height="2048"
           loading="lazy"
           decoding="async"
         />
