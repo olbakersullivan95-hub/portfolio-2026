@@ -556,7 +556,12 @@ img { display: block; width: 100%; }
 }
 
 .shop-grid__name  { font-size: var(--text-sm); margin-top: 0.5rem; display: block; }
+.shop-grid__meta  { font-size: var(--text-sm); color: var(--ink-mid); margin-top: 0.1rem; display: block; }
+.shop-grid__price { font-size: var(--text-sm); margin-top: 0.1rem; display: block; }
 .shop-grid__cta   { font-size: var(--text-sm); color: var(--ink-mid); margin-top: 0.2rem; display: block; }
+
+.shop-section { margin-bottom: 4rem; }
+.shop-section__label { font-size: var(--text-sm); padding: 0 var(--margin) 1rem; }
 
 /* =========================================
    SHOP DETAIL — 2 cols text + 2 cols image

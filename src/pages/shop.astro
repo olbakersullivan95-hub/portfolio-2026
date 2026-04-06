@@ -2,32 +2,70 @@
 import Base from '../layouts/Base.astro';
 
 const driveUrl = 'https://drive.google.com/drive/folders/1UY1JY85rCcH3usn5KwWURU7AQBwgvEXX?usp=drive_link';
+const contactEmail = 'mailto:olbakersullivan95@gmail.com';
 
 const mockups = Array.from({ length: 12 }, (_, i) => ({
   src: `/images/shop/mockup-${i + 1}.webp`,
   alt: `Mockups in the Wild—${i + 1}`,
   name: `Mockups in the Wild—${i + 1}`,
 }));
+
+const artItems = [
+  { src: '/images/art/art-1.png', title: 'Tiger Stripes', material: 'Watercolor', dimensions: '22" × 30"', price: '$30' },
+  { src: '/images/art/art-2.png', title: 'Lily Stripes', material: 'Watercolor', dimensions: '22" × 30"', price: '$30' },
+  { src: '/images/art/art-3.png', title: 'Pencil Portrait', material: 'Pencil', dimensions: '22" × 30"', price: '$30' },
+  { src: '/images/art/art-4.png', title: 'Leaves in Ink', material: 'Ink', dimensions: '22" × 30"', price: '$20' },
+  { src: '/images/art/art-5.png', title: 'Preservation', material: 'Acrylic', dimensions: '11" × 14"', price: '2× Series — $30' },
+  { src: '/images/art/art-6.png', title: 'Girl with Green Hair', material: 'Acrylic', dimensions: '3" × 4"', price: '$10' },
+];
 ---
 
 <Base title="Shop" activePage="shop">
-  <div class="grid grid--shop" id="shop-grid">
-    {mockups.map((item, i) => (
-      <div class="grid__item">
-        <img
-          src={item.src}
-          alt={item.alt}
-          loading={i < 6 ? 'eager' : 'lazy'}
-          decoding="async"
-        />
-        <span class="shop-grid__name">{item.name}</span>
-        <a
-          href={driveUrl}
-          target="_blank"
-          rel="noopener"
-          class="shop-grid__cta"
-        >Download on Google Drive →</a>
-      </div>
-    ))}
-  </div>
+
+  <section class="shop-section">
+    <h2 class="shop-section__label">Original Art</h2>
+    <div class="grid grid--shop" id="art-grid">
+      {artItems.map((item, i) => (
+        <div class="grid__item">
+          <img
+            src={item.src}
+            alt={item.title}
+            loading={i < 3 ? 'eager' : 'lazy'}
+            decoding="async"
+          />
+          <span class="shop-grid__name">{item.title}</span>
+          <span class="shop-grid__meta">{item.material} · {item.dimensions}</span>
+          <span class="shop-grid__price">{item.price}</span>
+          <a
+            href={contactEmail}
+            class="shop-grid__cta"
+          >Contact to purchase →</a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="shop-section">
+    <h2 class="shop-section__label">Mockups in the Wild</h2>
+    <div class="grid grid--shop" id="shop-grid">
+      {mockups.map((item, i) => (
+        <div class="grid__item">
+          <img
+            src={item.src}
+            alt={item.alt}
+            loading={i < 6 ? 'eager' : 'lazy'}
+            decoding="async"
+          />
+          <span class="shop-grid__name">{item.name}</span>
+          <a
+            href={driveUrl}
+            target="_blank"
+            rel="noopener"
+            class="shop-grid__cta"
+          >Download on Google Drive →</a>
+        </div>
+      ))}
+    </div>
+  </section>
+
 </Base>
