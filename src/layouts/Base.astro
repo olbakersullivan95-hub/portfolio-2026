@@ -58,23 +58,13 @@ const filters = ['UX', 'Brand', 'Product', 'Photography', 'Painting', 'Video', '
       <Fragment>
         <div class="tooltip tooltip--1" id="tooltip-1">
           <button class="tooltip__close" aria-label="Dismiss">✕</button>
-          <div class="tooltip__body">
-            <img src="/images/beaver.png" alt="" class="tooltip__beaver" aria-hidden="true" />
-            <div class="tooltip__text">
-              <p>This site is organized by job type. Use the filter bar to navigate.</p>
-              <p class="tooltip__hint">press any key to continue</p>
-            </div>
-          </div>
+          <p>This site is organized by job type. Use the filter bar to navigate.</p>
+          <p class="tooltip__hint">press any key to continue</p>
         </div>
         <div class="tooltip tooltip--2" id="tooltip-2">
           <button class="tooltip__close" aria-label="Dismiss">✕</button>
-          <div class="tooltip__body tooltip__body--reverse">
-            <div class="tooltip__text">
-              <p>Start with <a href="/work">Portfolio →</a> if you're here about work.</p>
-              <p class="tooltip__hint">press any key to continue</p>
-            </div>
-            <img src="/images/beaver.png" alt="" class="tooltip__beaver" aria-hidden="true" />
-          </div>
+          <p>Start with <a href="/work">Portfolio →</a> if you're here about work.</p>
+          <p class="tooltip__hint">press any key to continue</p>
         </div>
       </Fragment>
     )}
@@ -128,6 +118,7 @@ const filters = ['UX', 'Brand', 'Product', 'Photography', 'Painting', 'Video', '
       t1.classList.toggle('is-visible', n === 0);
       t2.classList.toggle('is-visible', n === 1);
       logoWrap.classList.toggle('tooltips-done', n === 2);
+      if (n === 2) localStorage.setItem('tooltips-seen', '1');
       if (n < 2) positionTooltips();
     }
 
@@ -135,12 +126,13 @@ const filters = ['UX', 'Brand', 'Product', 'Photography', 'Painting', 'Video', '
       if (step < 2) showStep(step + 1);
     }
 
-    showStep(0);
+    const seen = localStorage.getItem('tooltips-seen');
+    showStep(seen ? 2 : 0);
 
     document.addEventListener('keydown', () => { if (step < 2) advance(); });
     t1.querySelector('.tooltip__close')?.addEventListener('click', (e) => { e.stopPropagation(); advance(); });
     t2.querySelector('.tooltip__close')?.addEventListener('click', (e) => { e.stopPropagation(); advance(); });
-    logoWrap.addEventListener('click', () => { if (step === 2) showStep(0); });
+    logoWrap.addEventListener('click', () => { if (step === 2) { localStorage.removeItem('tooltips-seen'); showStep(0); } });
     window.addEventListener('resize', () => { if (step < 2) positionTooltips(); });
   }
 </script>
