@@ -38,18 +38,22 @@ const columns = Array.from({ length: NUM_COLS }, (_, i) =>
 ---
 
 <Base title="Home" activePage="home">
+  <div class="headliner">
+    <p class="headliner__left">Olivia Baker-Sullivan — Product &amp; UX Designer<br>I design web and product experiences that ship across acquisition, onboarding, and global launches.</p>
+    <p class="headliner__right">Block, DEPT, NSCAD</p>
+  </div>
   <div class="grid grid--home">
     {columns.map((col) => (
       <div class="home-col">
         {col.map((item) => (
           item.href ? (
             <a href={item.href} class="grid__item" data-categories={JSON.stringify(item.categories)} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
-              <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+              <img src={item.src} alt={item.alt} />
               <span class="grid__item-label">{item.label}</span>
             </a>
           ) : (
             <div class="grid__item grid__item--personal" data-categories={JSON.stringify(item.categories)}>
-              <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+              <img src={item.src} alt={item.alt} />
               <span class="grid__item-label">{item.label}</span>
             </div>
           )

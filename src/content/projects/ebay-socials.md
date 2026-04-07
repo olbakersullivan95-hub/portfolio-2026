@@ -9,7 +9,7 @@ coverImage: /images/projects/ebay-2/img-1.webp
 images:
   - src: /images/projects/ebay-2/img-1.webp
     alt: eBay North America social post, Ted Lasso Halloween costume
-  - src: /images/projects/ebay-2/img-2.webp
+  - src: /images/projects/ebay-2/img-2.gif
     alt: eBay North America social post, DJ Skee collector cards animation
   - src: /images/projects/ebay-2/img-3.webp
     alt: eBay North America social post, Oreo Cop the Drop series

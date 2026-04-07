@@ -93,7 +93,10 @@ const conclusionParagraphs = data.conclusion.trim().split(/\n\n+/);
             </div>
           ) : data.images[1] && (
             data.images[1].src.endsWith('.mp4') || data.images[1].src.endsWith('.webm') ? (
-              <video src={data.images[1].src} autoplay loop muted playsinline style="width:100%;display:block;" />
+              <video autoplay loop muted playsinline style="width:100%;display:block;">
+                <source src={data.images[1].src.replace(/\.(webm|mp4)$/, '.mp4')} type="video/mp4" />
+                <source src={data.images[1].src.replace(/\.(webm|mp4)$/, '.webm')} type="video/webm" />
+              </video>
             ) : (
               <img src={data.images[1].src} alt={data.images[1].alt} loading="lazy" />
             )
@@ -126,7 +129,10 @@ const conclusionParagraphs = data.conclusion.trim().split(/\n\n+/);
         <div class="cs-image cs-image--3">
           {data.images[2] && (
             data.images[2].src.endsWith('.mp4') || data.images[2].src.endsWith('.webm') ? (
-              <video src={data.images[2].src} autoplay loop muted playsinline style="width:100%;display:block;" />
+              <video autoplay loop muted playsinline style="width:100%;display:block;">
+                <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.mp4')} type="video/mp4" />
+                <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.webm')} type="video/webm" />
+              </video>
             ) : (
               <img src={data.images[2].src} alt={data.images[2].alt} loading="lazy" />
             )

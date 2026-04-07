@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
+  site: 'https://oliviabakersullivan.ca',
   // Images are optimized via Astro's built-in <Image /> component
   image: {
     // Enable sharp for image optimization

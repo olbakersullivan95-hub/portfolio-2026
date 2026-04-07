@@ -107,6 +107,138 @@ img { display: block; width: 100%; }
 }
 
 /* =========================================
+   LOGO WRAP + RESTART HINT
+   ========================================= */
+
+.logo-wrap {
+  position: relative;
+  width: fit-content;
+}
+
+.logo-hint {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: var(--text-body);
+  color: var(--ink-mid);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.logo-wrap.tooltips-done {
+  cursor: pointer;
+}
+
+.logo-wrap.tooltips-done:hover .logo-hint {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* =========================================
+   TOOLTIPS — glass frame
+   ========================================= */
+
+.tooltip {
+  position: fixed;
+  width: 400px;
+  padding: 20px;
+  /* Glass: frost 24%, refraction 62, depth 21, light -45° */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.08),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.5),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.04);
+  font-size: var(--text-body);
+  font-style: italic;
+  line-height: 1.5;
+  z-index: 200;
+  display: none;
+}
+
+.tooltip.is-visible {
+  display: block;
+}
+
+.tooltip__close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--text-sm);
+  color: var(--ink);
+  opacity: 0.45;
+  padding: 2px;
+  line-height: 1;
+}
+
+.tooltip__close:hover { opacity: 1; }
+
+.tooltip__body {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.tooltip__text {
+  flex: 1;
+}
+
+.tooltip__beaver {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.tooltip__hint {
+  margin-top: 0.75rem;
+  opacity: 0.45;
+  font-style: italic;
+}
+
+.tooltip a { text-decoration: underline; }
+.tooltip a:hover { opacity: 0.7; }
+
+/* =========================================
+   HEADLINER
+   ========================================= */
+
+.headliner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 var(--margin) 2.5rem;
+}
+
+.headliner__left,
+.headliner__right {
+  font-family: "Sunliner Revival", serif;
+  font-size: var(--text-lg);
+  line-height: 1.55;
+}
+
+.headliner__right {
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .headliner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .headliner__right {
+    text-align: left;
+  }
+}
+
+/* =========================================
    HOME GRID
    6 fixed flex columns — each project is pinned
    to one column (tube). Hover expansion only
@@ -330,6 +462,7 @@ img { display: block; width: 100%; }
   font-weight: 700;
   font-variation-settings: "wdth" 100;
   line-height: 1.2;
+  margin-top: 60px;
   margin-bottom: 1rem;
 }
 
@@ -506,13 +639,17 @@ img { display: block; width: 100%; }
 
 .contact-form__row input::placeholder,
 .contact-form__row textarea::placeholder {
-  opacity: 0.35;
+  color: var(--ink-mid);
+  opacity: 1;
 }
 
 .contact-form__submit {
   align-self: flex-start;
-  background: transparent;
-  border: 1px solid currentColor;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--cream);
+  border: 1px solid var(--ink);
+  color: var(--ink);
   font-family: inherit;
   font-size: var(--text-tag);
   font-weight: 400;
@@ -524,6 +661,7 @@ img { display: block; width: 100%; }
 }
 
 .contact-form__submit:hover { opacity: 0.6; }
+.contact-form__submit:active { background: var(--cream); }
 
 @media (max-width: 1024px) {
   .about-wrap { grid-template-columns: 1fr; row-gap: 2rem; }
@@ -707,6 +845,7 @@ img { display: block; width: 100%; }
   .cs-image--1    { padding-bottom: 1.5rem; }
   .cs-text--bullets { padding-bottom: 1.5rem; }
   .cs-image--2      { padding-bottom: 1.5rem; }
+  .cs-text--conclusion { padding-bottom: 40px; }
 
   .shop-detail { flex-direction: column; }
   .shop-detail__left,
@@ -733,4 +872,8 @@ img { display: block; width: 100%; }
   .stat-value { font-size: 1.35rem; }
 
   .carousel__arrow { padding: 30px 30px; margin: -30px -30px; }
+
+  /* 20px minimum spacing system */
+  .shop-detail { gap: 20px; }
+  .carousel__track { gap: 20px; }
 }
