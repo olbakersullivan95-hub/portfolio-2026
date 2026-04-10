@@ -1,96 +1,231 @@
 ---
-import Base from '../layouts/Base.astro';
-import { getCollection } from 'astro:content';
-
-const projects = (await getCollection('projects')).sort(
-  (a, b) => a.data.order - b.data.order
-);
-
-// Photography, writing, and art/shop tiles — appended after portfolio projects
-const extraTiles = [
-  { src: '/images/art/art-1.webp', label: '/shop', alt: 'Tiger Stripes', href: '/shop', categories: ['Painting'], w: 1536, h: 1536 },
-  { src: '/images/art/art-2.webp', label: '/shop', alt: 'Lily Stripes', href: '/shop', categories: ['Painting'], w: 1536, h: 1536 },
-  { src: '/images/art/art-3.webp', label: '/shop', alt: 'Pencil Portrait', href: '/shop', categories: ['Painting'], w: 1536, h: 1536 },
-  { src: '/images/art/art-4.webp', label: '/shop', alt: 'Leaves in Ink', href: '/shop', categories: ['Painting'], w: 1536, h: 1536 },
-  { src: '/images/art/art-5.webp', label: '/shop', alt: 'Preservation', href: '/shop', categories: ['Painting'], w: 1536, h: 1536 },
-  { src: '/images/art/art-6.webp', label: '/shop', alt: 'Girl with Green Hair', href: '/shop', categories: ['Painting'], w: 1536, h: 1536 },
-  { src: '/images/personal/photo-1.webp', label: '/photography', alt: 'Photography', categories: ['Photography'], w: 1536, h: 1536 },
-  { src: '/images/personal/photo-2.webp', label: '/photography', alt: 'Photography', categories: ['Photography'], w: 1536, h: 1536 },
-  { src: '/images/personal/photo-3.webp', label: '/photography', alt: 'Photography', categories: ['Photography'], w: 1536, h: 1536 },
-  { src: '/images/personal/photo-4.webp', label: '/photography', alt: 'Photography', categories: ['Photography'], w: 1536, h: 1536 },
-  { src: '/images/writing/writing-1.webp', label: 'Designing Paths: Andrew Reutsky shares his story as an immigrant designer', alt: 'Designing Paths: Andrew Reutsky shares his story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-andrew-reutsky-shares-his-story-as-an-immigrant-designer', categories: ['Writing'], w: 1536, h: 1536 },
-  { src: '/images/writing/writing-2.webp', label: 'Designing Paths: Anika Aggarwal Associate RGD on her journey as an immigrant designer', alt: 'Designing Paths: Anika Aggarwal Associate RGD on her journey as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-anika-aggarwal-shares-her-experiences-as-an-immigrant-designer', categories: ['Writing'], w: 1536, h: 1536 },
-  { src: '/images/writing/writing-3.webp', label: 'Designing Paths: Maria Sinisterra RGD shares her story as an immigrant designer', alt: 'Designing Paths: Maria Sinisterra RGD shares her story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-maria-sinisterra-rgd-shares-her-story-as-an-immigrant-designer', categories: ['Writing'], w: 1536, h: 1536 },
-  { src: '/images/writing/writing-4.webp', label: 'Designing Paths: Giovanni Ferretti shares his story as an immigrant designer', alt: 'Designing Paths: Giovanni Ferretti shares his story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-giovanni-ferretti-shares-his-story-as-an-immigrant-designer', categories: ['Writing'], w: 1536, h: 1536 },
-];
-
-const NUM_COLS = 6;
-
-// Build column arrays: portfolio projects first, then extra tiles, all by index % 6
-const allItems = [
-  ...projects.map(p => ({ src: p.data.coverImage, label: `/${p.slug}`, alt: p.data.title, href: `/work/${p.slug}`, categories: p.data.categories, w: 1536, h: 2048 })),
-  ...extraTiles.map(t => ({ src: t.src, label: t.label, alt: t.alt, href: t.href ?? null, categories: t.categories, w: t.w, h: t.h })),
-];
-
-const columns = Array.from({ length: NUM_COLS }, (_, i) =>
-  allItems.filter((_, j) => j % NUM_COLS === i)
-);
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/obs-yellow.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Olivia Baker-Sullivan — Product & UX Designer" />
+  <title>Olivia Baker-Sullivan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:opsz,wght@6..24,300;6..24,400&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: "Sunliner Revival";
+      src: url("/fonts/SunlinerRevival.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
 
-<Base title="Home" activePage="home">
-  <div class="headliner">
-    <p class="headliner__left">Olivia Baker-Sullivan — Product &amp; UX Designer<br>I design web and product experiences that ship across acquisition, onboarding, and global launches.</p>
-    <p class="headliner__right">Block, DEPT, NSCAD</p>
-  </div>
-  <div class="grid grid--home">
-    {columns.map((col) => (
-      <div class="home-col">
-        {col.map((item) => (
-          item.href ? (
-            <a href={item.href} class="grid__item" data-categories={JSON.stringify(item.categories)} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
-              <img src={item.src} alt={item.alt} />
-              <span class="grid__item-label">{item.label}</span>
-            </a>
-          ) : (
-            <div class="grid__item grid__item--personal" data-categories={JSON.stringify(item.categories)}>
-              <img src={item.src} alt={item.alt} />
-              <span class="grid__item-label">{item.label}</span>
-            </div>
-          )
-        ))}
-      </div>
-    ))}
-  </div>
-</Base>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<script>
-  const filterTags = document.querySelectorAll<HTMLElement>('.nav-filters__tag');
-  const gridItems = document.querySelectorAll<HTMLElement>('.grid--home .grid__item');
-  const activeFilters = new Set<string>();
+    :root {
+      --cream: #E9E3D7;
+      --ink: #1a1a1a;
+      --ink-mid: #555555;
+      --ink-light: #636363;
+      --border: rgba(26, 26, 26, 0.12);
+    }
 
-  filterTags.forEach((tag) => {
-    tag.addEventListener('click', () => {
-      const filter = tag.dataset.filter ?? '';
-      if (activeFilters.has(filter)) {
-        activeFilters.delete(filter);
-        tag.classList.remove('is-active');
-      } else {
-        activeFilters.add(filter);
-        tag.classList.add('is-active');
-      }
-      applyFilters();
+    html, body {
+      height: 100%;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Noto Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── Monogram ── */
+    .obs-monogram {
+      align-self: center;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(140px) scale(4.1);
+      animation:
+        monogram-enter  0.3s ease 0s forwards,
+        monogram-shrink 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+      pointer-events: none;
+    }
+
+    .obs-monogram img {
+      width: 39px;
+      display: block;
+    }
+
+    @keyframes monogram-enter {
+      from { opacity: 0; transform: translateY(140px) scale(4.1); }
+      to   { opacity: 1; transform: translateY(140px) scale(4.1); }
+    }
+
+    @keyframes monogram-shrink {
+      from { opacity: 1; transform: translateY(140px) scale(4.1); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* ── Nav ── */
+    .obs-nav {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .obs-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 1rem 0;
+      border-top: 0.5px solid var(--border);
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--ink);
+      transition: all 0.15s ease;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    .obs-row:last-child {
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .obs-row.r1 { animation: row-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.4s forwards; }
+    .obs-row.r2 { animation: row-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.7s forwards; }
+    .obs-row.r3 { animation: row-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 2.0s forwards; }
+
+    @keyframes row-in {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .obs-slug {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--ink-light);
+      letter-spacing: 0.05em;
+      min-width: 72px;
+      flex-shrink: 0;
+      transition: color 0.15s ease;
+    }
+
+    .obs-label {
+      font-family: "Sunliner Revival", serif;
+      font-size: 36px;
+      line-height: 1;
+      flex: 1;
+      transition: transform 0.15s ease;
+    }
+
+    .obs-tag {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 300;
+      color: var(--ink-light);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.15s ease;
+    }
+
+    .obs-row:hover .obs-slug { color: var(--ink-mid); }
+    .obs-row:hover .obs-label { transform: translateX(4px); font-style: italic; }
+    .obs-row:hover .obs-tag  { color: var(--ink-mid); }
+
+    .obs-row.default .obs-label { font-style: italic; }
+    .obs-row.default .obs-slug  { color: var(--ink-mid); }
+
+    /* ── Redirect indicator ── */
+    .obs-redirect {
+      margin-top: 2.5rem;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--ink-light);
+      text-transform: uppercase;
+      opacity: 0;
+      animation: row-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 2.7s forwards;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .obs-bar {
+      width: 80px;
+      height: 0.5px;
+      background: var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .obs-bar-fill {
+      position: absolute;
+      top: 0; left: 0;
+      height: 100%;
+      width: 0%;
+      background: var(--ink-light);
+      animation: bar-fill 7s linear 3.5s forwards;
+    }
+
+    @keyframes bar-fill {
+      from { width: 0%; }
+      to   { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="obs-nav">
+    <div class="obs-monogram"><img src="/obs-logo-hero.svg" alt="OBS" /></div>
+    <a class="obs-row r1 default" href="/work">
+      <span class="obs-slug">/portfolio</span>
+      <span class="obs-label">Portfolio</span>
+      <span class="obs-tag">UX · Brand · Product</span>
+    </a>
+    <a class="obs-row r2" href="/archive">
+      <span class="obs-slug">/archive</span>
+      <span class="obs-label">Archive</span>
+      <span class="obs-tag">Process · Past work</span>
+    </a>
+    <a class="obs-row r3" href="/shop">
+      <span class="obs-slug">/shop</span>
+      <span class="obs-label">Shop</span>
+      <span class="obs-tag">Prints · Objects</span>
+    </a>
+
+    <div class="obs-redirect">
+      <span>Continuing to portfolio</span>
+      <div class="obs-bar"><div class="obs-bar-fill"></div></div>
+    </div>
+  </nav>
+
+  <script>
+    const REDIRECT_URL = '/work';
+    const REDIRECT_DELAY = 14000;
+
+    const timer = setTimeout(() => {
+      window.location.href = REDIRECT_URL;
+    }, REDIRECT_DELAY);
+
+    document.querySelectorAll('.obs-row').forEach(row => {
+      row.addEventListener('click', () => clearTimeout(timer));
     });
-  });
+  </script>
 
-  function applyFilters() {
-    gridItems.forEach((item) => {
-      if (activeFilters.size === 0) {
-        item.style.display = '';
-        return;
-      }
-      const cats: string[] = JSON.parse(item.dataset.categories ?? '[]');
-      const match = cats.some((c) => activeFilters.has(c));
-      item.style.display = match ? '' : 'none';
-    });
-  }
-</script>
+</body>
+</html>

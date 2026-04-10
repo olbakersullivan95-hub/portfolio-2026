@@ -2,12 +2,32 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const projects = (await getCollection('projects')).sort(
-  (a, b) => a.data.order - b.data.order
-);
+const projects = (await getCollection('projects'))
+  .filter((p) => p.slug !== 'everbloom')
+  .sort((a, b) => a.data.order - b.data.order);
+
+const companyBySlug: Record<string, string> = {
+  'square-industry': 'Block',
+  'vpos': 'Block',
+  'x2c': 'Block',
+  'square-50': 'Block',
+  'ebay-email-templates': 'eBay',
+  'small-business-saturday': 'eBay',
+  'ebay-socials': 'eBay',
+  'bodies-and-sound': 'Bodies and Sound',
+  'nscad-es-brand': 'NSCAD',
+  'nscad-es-web': 'NSCAD',
+  'wheelhouse': 'Wheelhouse',
+  'ttc-redesign': 'TTC',
+  'everbloom': 'Everbloom',
+};
 ---
 
 <Base title="Portfolio" activePage="portfolio">
+  <div class="headliner">
+    <p class="headliner__left">Olivia Baker-Sullivan — Product &amp; UX Designer<br>I design web and product experiences that ship across acquisition, onboarding, and global launches.</p>
+    <p class="headliner__right">Block, DEPT, NSCAD</p>
+  </div>
   <div class="grid grid--portfolio" id="portfolio-grid">
     {projects.map((project) => (
       <a
@@ -21,6 +41,7 @@ const projects = (await getCollection('projects')).sort(
           loading="lazy"
           decoding="async"
         />
+        <span class="grid__item-company">/{companyBySlug[project.slug] ?? ''}</span>
         <span class="grid__item-label">/{project.slug}</span>
       </a>
     ))}

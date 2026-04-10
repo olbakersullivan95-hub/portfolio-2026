@@ -107,94 +107,6 @@ img { display: block; width: 100%; }
 }
 
 /* =========================================
-   LOGO WRAP + RESTART HINT
-   ========================================= */
-
-.logo-wrap {
-  position: relative;
-  width: fit-content;
-}
-
-.logo-hint {
-  position: absolute;
-  left: calc(100% + 10px);
-  top: 50%;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  font-size: var(--text-body);
-  color: var(--ink-mid);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-
-.logo-wrap.tooltips-done {
-  cursor: pointer;
-}
-
-.logo-wrap.tooltips-done:hover .logo-hint {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* =========================================
-   TOOLTIPS — glass frame
-   ========================================= */
-
-.tooltip {
-  position: fixed;
-  width: 400px;
-  padding: 20px;
-  /* Glass: frost 24%, refraction 62, depth 21, light -45° */
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow:
-    0 6px 20px rgba(0, 0, 0, 0.08),
-    inset 1px 1px 0 rgba(255, 255, 255, 0.5),
-    inset -1px -1px 0 rgba(0, 0, 0, 0.04);
-  font-size: var(--text-body);
-  font-style: italic;
-  line-height: 1.5;
-  z-index: 200;
-  display: none;
-}
-
-.tooltip.is-visible {
-  display: block;
-}
-
-.tooltip__close {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: var(--text-sm);
-  color: var(--ink);
-  opacity: 0.45;
-  padding: 2px;
-  line-height: 1;
-}
-
-.tooltip p {
-  padding-right: 20px;
-}
-
-.tooltip__close:hover { opacity: 1; }
-
-.tooltip__hint {
-  margin-top: 0.75rem;
-  opacity: 0.45;
-  font-style: italic;
-}
-
-.tooltip a { text-decoration: underline; }
-.tooltip a:hover { opacity: 0.7; }
-
-/* =========================================
    HEADLINER
    ========================================= */
 
@@ -291,7 +203,7 @@ img { display: block; width: 100%; }
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   column-gap: var(--gutter);
-  row-gap: var(--gutter);
+  row-gap: 120px;
   padding: 0 var(--margin);
   align-items: start;
 }
@@ -304,9 +216,17 @@ img { display: block; width: 100%; }
 
 .grid--portfolio .grid__item img { width: 100%; display: block; }
 
+.grid--portfolio .grid__item-company {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--ink-light);
+  padding-top: 10px;
+  letter-spacing: 0.03em;
+}
+
 .grid--portfolio .grid__item-label {
   font-size: var(--text-sm);
-  padding: 40px 0;
+  padding: 5px 0 0;
   line-height: 1.4;
 }
 
@@ -822,7 +742,7 @@ img { display: block; width: 100%; }
 @media (max-width: 1024px) {
   .grid--home     { flex-wrap: wrap; }
   .grid--home .home-col { flex: 0 0 calc(50% - var(--gutter) / 2); }
-  .grid--portfolio { grid-template-columns: repeat(2, 1fr); }
+  .grid--portfolio { grid-template-columns: repeat(2, 1fr); row-gap: 70px; }
   .grid--shop     { grid-template-columns: repeat(2, 1fr); }
 
   .grid--home .grid__item-label { max-height: 6rem; padding: 10px 0; }

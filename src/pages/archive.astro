@@ -1,0 +1,94 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+// Photography, writing, and art/shop tiles — appended after portfolio projects
+const extraTiles = [
+  { src: '/images/art/art-1.webp', label: '/shop', alt: 'Tiger Stripes', href: '/shop', categories: ['Painting'], w: 1536, h: 1536 },
+  { src: '/images/art/art-2.webp', label: '/shop', alt: 'Lily Stripes', href: '/shop', categories: ['Painting'], w: 1536, h: 1536 },
+  { src: '/images/art/art-3.webp', label: '/shop', alt: 'Pencil Portrait', href: '/shop', categories: ['Painting'], w: 1536, h: 1536 },
+  { src: '/images/art/art-4.webp', label: '/shop', alt: 'Leaves in Ink', href: '/shop', categories: ['Painting'], w: 1536, h: 1536 },
+  { src: '/images/art/art-5.webp', label: '/shop', alt: 'Preservation', href: '/shop', categories: ['Painting'], w: 1536, h: 1536 },
+  { src: '/images/art/art-6.webp', label: '/shop', alt: 'Girl with Green Hair', href: '/shop', categories: ['Painting'], w: 1536, h: 1536 },
+  { src: '/images/personal/photo-1.webp', label: '/photography', alt: 'Photography', categories: ['Photography'], w: 1536, h: 1536 },
+  { src: '/images/personal/photo-2.webp', label: '/photography', alt: 'Photography', categories: ['Photography'], w: 1536, h: 1536 },
+  { src: '/images/personal/photo-3.webp', label: '/photography', alt: 'Photography', categories: ['Photography'], w: 1536, h: 1536 },
+  { src: '/images/personal/photo-4.webp', label: '/photography', alt: 'Photography', categories: ['Photography'], w: 1536, h: 1536 },
+  { src: '/images/writing/writing-1.webp', label: 'Designing Paths: Andrew Reutsky shares his story as an immigrant designer', alt: 'Designing Paths: Andrew Reutsky shares his story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-andrew-reutsky-shares-his-story-as-an-immigrant-designer', categories: ['Writing'], w: 1536, h: 1536 },
+  { src: '/images/writing/writing-2.webp', label: 'Designing Paths: Anika Aggarwal Associate RGD on her journey as an immigrant designer', alt: 'Designing Paths: Anika Aggarwal Associate RGD on her journey as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-anika-aggarwal-shares-her-experiences-as-an-immigrant-designer', categories: ['Writing'], w: 1536, h: 1536 },
+  { src: '/images/writing/writing-3.webp', label: 'Designing Paths: Maria Sinisterra RGD shares her story as an immigrant designer', alt: 'Designing Paths: Maria Sinisterra RGD shares her story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-maria-sinisterra-rgd-shares-her-story-as-an-immigrant-designer', categories: ['Writing'], w: 1536, h: 1536 },
+  { src: '/images/writing/writing-4.webp', label: 'Designing Paths: Giovanni Ferretti shares his story as an immigrant designer', alt: 'Designing Paths: Giovanni Ferretti shares his story as an immigrant designer', href: 'https://rgd.ca/articles/designing-paths-giovanni-ferretti-shares-his-story-as-an-immigrant-designer', categories: ['Writing'], w: 1536, h: 1536 },
+];
+
+const NUM_COLS = 6;
+
+const allItems = [
+  ...projects.map(p => ({ src: p.data.coverImage, label: `/${p.slug}`, alt: p.data.title, href: `/work/${p.slug}`, categories: p.data.categories, w: 1536, h: 2048 })),
+  ...extraTiles.map(t => ({ src: t.src, label: t.label, alt: t.alt, href: t.href ?? null, categories: t.categories, w: t.w, h: t.h })),
+];
+
+const columns = Array.from({ length: NUM_COLS }, (_, i) =>
+  allItems.filter((_, j) => j % NUM_COLS === i)
+);
+---
+
+<Base title="Archive" activePage="archive">
+  <div class="headliner">
+    <p class="headliner__left">Hi! I'm Olivia, based in Toronto. Here's a personal archive of the different ways I've enjoyed working:</p>
+  </div>
+  <div class="grid grid--home">
+    {columns.map((col) => (
+      <div class="home-col">
+        {col.map((item) => (
+          item.href ? (
+            <a href={item.href} class="grid__item" data-categories={JSON.stringify(item.categories)} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
+              <img src={item.src} alt={item.alt} />
+              <span class="grid__item-label">{item.label}</span>
+            </a>
+          ) : (
+            <div class="grid__item grid__item--personal" data-categories={JSON.stringify(item.categories)}>
+              <img src={item.src} alt={item.alt} />
+              <span class="grid__item-label">{item.label}</span>
+            </div>
+          )
+        ))}
+      </div>
+    ))}
+  </div>
+</Base>
+
+<script>
+  const filterTags = document.querySelectorAll<HTMLElement>('.nav-filters__tag');
+  const gridItems = document.querySelectorAll<HTMLElement>('.grid--home .grid__item');
+  const activeFilters = new Set<string>();
+
+  filterTags.forEach((tag) => {
+    tag.addEventListener('click', () => {
+      const filter = tag.dataset.filter ?? '';
+      if (activeFilters.has(filter)) {
+        activeFilters.delete(filter);
+        tag.classList.remove('is-active');
+      } else {
+        activeFilters.add(filter);
+        tag.classList.add('is-active');
+      }
+      applyFilters();
+    });
+  });
+
+  function applyFilters() {
+    gridItems.forEach((item) => {
+      if (activeFilters.size === 0) {
+        item.style.display = '';
+        return;
+      }
+      const cats: string[] = JSON.parse(item.dataset.categories ?? '[]');
+      const match = cats.some((c) => activeFilters.has(c));
+      item.style.display = match ? '' : 'none';
+    });
+  }
+</script>

@@ -4,7 +4,7 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
-  activePage?: 'home' | 'about' | 'portfolio' | 'shop';
+  activePage?: 'archive' | 'about' | 'portfolio' | 'shop';
 }
 const {
   title,
@@ -36,38 +36,22 @@ const filters = ['UX', 'Brand', 'Product', 'Photography', 'Painting', 'Video', '
   <body>
     <header class="site-header">
       <div class="site-header__left">
-        <div class="logo-wrap" id="logo-wrap">
-          <img src="/obs-logo.svg" alt="OBS" class="logo" width="39" height="18" />
-          <span class="logo-hint">Need the tooltips again?</span>
-        </div>
+        <a href="/"><img src="/obs-logo.svg" alt="OBS" class="logo" width="39" height="18" /></a>
         <nav class="nav-main" aria-label="Main navigation">
-          <a href="/" class:list={['nav-main__link', { 'is-active': activePage === 'home' }]}>Home</a>
+          <a href="/archive" class:list={['nav-main__link', { 'is-active': activePage === 'archive' }]}>Archive</a>
           <a href="/about" class:list={['nav-main__link', { 'is-active': activePage === 'about' }]}>About</a>
           <a href="/work" class:list={['nav-main__link', { 'is-active': activePage === 'portfolio' }]}>Portfolio</a>
           <a href="/shop" class:list={['nav-main__link', { 'is-active': activePage === 'shop' }]}>Shop</a>
         </nav>
       </div>
-      <nav class="nav-filters" aria-label="Filter by category">
-        {filters.map((tag) => (
-          <span class="nav-filters__tag" data-filter={tag}>{tag}</span>
-        ))}
-      </nav>
+      {activePage === 'archive' && (
+        <nav class="nav-filters" aria-label="Filter by category">
+          {filters.map((tag) => (
+            <span class="nav-filters__tag" data-filter={tag}>{tag}</span>
+          ))}
+        </nav>
+      )}
     </header>
-
-    {activePage === 'home' && (
-      <Fragment>
-        <div class="tooltip tooltip--1" id="tooltip-1">
-          <button class="tooltip__close" aria-label="Dismiss">✕</button>
-          <p>This site is organized by job type. Use the filter bar to navigate.</p>
-          <p class="tooltip__hint">press any key to continue</p>
-        </div>
-        <div class="tooltip tooltip--2" id="tooltip-2">
-          <button class="tooltip__close" aria-label="Dismiss">✕</button>
-          <p>Start with <a href="/work">Portfolio →</a> if you're here about work.</p>
-          <p class="tooltip__hint">press any key to continue</p>
-        </div>
-      </Fragment>
-    )}
 
     <main class="main">
       <slot />
@@ -85,54 +69,3 @@ const filters = ['UX', 'Brand', 'Product', 'Photography', 'Painting', 'Video', '
   </body>
 </html>
 
-<script>
-  const t1 = document.getElementById('tooltip-1') as HTMLElement | null;
-  const t2 = document.getElementById('tooltip-2') as HTMLElement | null;
-  const logoWrap = document.getElementById('logo-wrap') as HTMLElement | null;
-
-  if (t1 && t2 && logoWrap) {
-    const TOOLTIP_W = 400;
-    let step = 0;
-
-    function positionTooltips() {
-      const mobile = window.innerWidth <= 600;
-      const filters = document.querySelector<HTMLElement>('.nav-filters');
-      const portfolio = document.querySelector<HTMLElement>('a.nav-main__link[href="/work"]');
-      const navMain = document.querySelector<HTMLElement>('.nav-main');
-      if (!filters || !portfolio || !navMain) return;
-
-      if (mobile) {
-        t1.style.cssText = `top:20px; right:20px; left:auto;`;
-        const nr = navMain.getBoundingClientRect();
-        t2.style.cssText = `top:${nr.top}px; left:${nr.left}px; right:auto;`;
-      } else {
-        const fr = filters.getBoundingClientRect();
-        t1.style.cssText = `top:${fr.top}px; left:${fr.left - TOOLTIP_W - 20}px; right:auto;`;
-        const pr = portfolio.getBoundingClientRect();
-        t2.style.cssText = `top:${pr.top}px; left:${pr.right + 16}px; right:auto;`;
-      }
-    }
-
-    function showStep(n: number) {
-      step = n;
-      t1.classList.toggle('is-visible', n === 0);
-      t2.classList.toggle('is-visible', n === 1);
-      logoWrap.classList.toggle('tooltips-done', n === 2);
-      if (n === 2) localStorage.setItem('tooltips-seen', '1');
-      if (n < 2) positionTooltips();
-    }
-
-    function advance() {
-      if (step < 2) showStep(step + 1);
-    }
-
-    const seen = localStorage.getItem('tooltips-seen');
-    showStep(seen ? 2 : 0);
-
-    document.addEventListener('keydown', () => { if (step < 2) advance(); });
-    t1.querySelector('.tooltip__close')?.addEventListener('click', (e) => { e.stopPropagation(); advance(); });
-    t2.querySelector('.tooltip__close')?.addEventListener('click', (e) => { e.stopPropagation(); advance(); });
-    logoWrap.addEventListener('click', () => { if (step === 2) { localStorage.removeItem('tooltips-seen'); showStep(0); } });
-    window.addEventListener('resize', () => { if (step < 2) positionTooltips(); });
-  }
-</script>
