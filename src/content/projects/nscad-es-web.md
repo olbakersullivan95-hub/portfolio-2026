@@ -20,6 +20,7 @@ stats:
     label: Stylesheet from Scratch
   - value: "Live"
     label: Still in Active Use
+opener: "Streams don't stop at city limits, and neither did the work. From Halifax to Toronto and brief to brand system, and they're still running today."
 order: 10
 intro: |
   As part of the NSCAD Extended Studies brand project, I built and developed the department website from scratch, writing the stylesheet entirely in Visual Studio. A stylesheet that remains unchanged six years later.
@@ -27,14 +28,11 @@ intro: |
   This wasn't a template or a CMS build. It was written by hand, with deliberate attention to how it would hold up over time in the hands of non-designers and administrators who would need to update it without breaking it.
 bulletHeading: What I Built
 bulletPoints:
-  - Designed and built the full department website integrated with the Extended Studies brand system
-  - Wrote the stylesheet from scratch in Visual Studio, no frameworks, no templates
-  - Designed for maintainability so non-designer staff could update content without disrupting visual integrity
-  - Ensured the site worked alongside NSCAD University's broader web presence while feeling distinct to Extended Studies
+  - "The stylesheet written from scratch in Visual Studio remains unchanged six years later. Weekly meetings with the head of Extended Studies throughout the process kept the work grounded in the department's actual needs rather than in personal design preferences, a discipline that makes the difference between a project that lasts and one that gets quietly replaced."
 conclusionHeading: The Design Thinking
 conclusion: |
-  A website for an institution has to outlast the person who built it. That was the non-negotiable constraint. Every CSS decision, every structural choice was made with one question in mind: can someone who didn't write this maintain it confidently?
+  The central question every decision was tested against: will this hold when I'm not here? The answer, six years later, is yes. That kind of longevity doesn't happen by accident. It happens when you build with enough clarity and flexibility that the system can breathe without breaking.
 
-  Six years of unchanged stylesheet says yes. That's not luck, it's the result of writing code that explains itself, structuring things clearly enough that future maintainers can follow the logic without documentation. That's also the best kind of design: so considered in its construction that it doesn't need to be touched.
+  The best design documentation is always written for the person who comes after you. Six years of unchanged stylesheet says yes. That's not luck, it's the result of writing code that explains itself, structuring things clearly enough that future maintainers can follow the logic without documentation. That's also the best kind of design: so considered in its construction that it doesn't need to be touched.
 liveUrl: "https://make.nscad.ca/"
 ---

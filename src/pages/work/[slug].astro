@@ -19,19 +19,28 @@ const { data } = activeProject;
 
 const introParagraphs = data.intro.trim().split(/\n\n+/);
 const conclusionParagraphs = data.conclusion.trim().split(/\n\n+/);
+
+function isVideo(src: string) {
+  return src.endsWith('.mp4') || src.endsWith('.webm');
+}
 ---
 
-<Base
-  title={data.title}
-  description={data.subtitle}
-  activePage="portfolio"
->
-  <div class="case-study-wrap">
+<Base title={data.title} description={data.subtitle} activePage="portfolio">
+
+  {data.opener && (
+    <div class="cs-opener-overlay" id="cs-opener-overlay" aria-hidden="true">
+      <div class="cs-opener-wrap">
+        <p class="cs-opener-text" id="cs-opener-text" data-opener={data.opener}></p>
+        <button class="cs-skip" id="cs-skip">Skip →</button>
+      </div>
+    </div>
+  )}
+
+  <div class:list={['case-study-wrap', { 'cs-page-content': !!data.opener }]} id="cs-page-content">
     <a href="/work" class="back-btn">← Portfolio</a>
 
+    <!-- ── Section 1: scanner moment ── -->
     <div class="case-study-grid">
-
-      <!-- Row 1: Intro text + Image 1 -->
       <div class="cs-row">
         <div class="cs-text cs-text--intro">
           <h1 class="cs-title">{data.title}</h1>
@@ -66,94 +75,103 @@ const conclusionParagraphs = data.conclusion.trim().split(/\n\n+/);
           />
         </div>
       </div>
+    </div>
 
-      <!-- Row 2: Bullets + Image 2 -->
-      <div class="cs-row">
-        <div class="cs-text cs-text--bullets">
-          <h2 class="cs-section-heading">{data.bulletHeading}</h2>
-          <ul class="cs-bullets">
-            {data.bulletPoints.map((point) => <li>{point}</li>)}
-          </ul>
-        </div>
+    <!-- ── Section 2: asymmetric narrative grid ── -->
+    <div class="cs-body-grid">
 
-        <div class="cs-image cs-image--2">
-          {slug === 'square-industry' ? (
-            <div class="industry-words">
-              {[
-                'Bakeries',
-                'Bars & Breweries',
-                'Catering',
-                'Coffee Shops',
-                'Food Trucks',
-                'Franchises',
-                'Full Service',
-                'Quick Service',
-                'All Food & Beverage',
-              ].map((word) => <span>{word}</span>)}
-            </div>
-          ) : data.images[1] && (
-            data.images[1].src.endsWith('.mp4') || data.images[1].src.endsWith('.webm') ? (
+      <!-- Row 1: [empty][img: 2-3][text: 4-5][empty] -->
+      {data.images[1] && (
+        <>
+          <div class="csg-img1">
+            {slug === 'square-industry' ? (
+              <div class="industry-words">
+                {[
+                  { label: 'Bakeries',            slug: 'bakery' },
+                  { label: 'Bars & Breweries',    slug: 'bars',          myWork: true },
+                  { label: 'Catering',            slug: 'catering' },
+                  { label: 'Coffee Shops',        slug: 'coffee-shops' },
+                  { label: 'Food Trucks',         slug: 'food-trucks',   myWork: true },
+                  { label: 'Franchises',          slug: 'franchises',    myWork: true },
+                  { label: 'Full Service',        slug: 'full-service',  myWork: true },
+                  { label: 'Quick Service',       slug: 'quick-service', myWork: true },
+                  { label: 'All Food & Beverage', slug: 'food-and-beverage' },
+                ].map((item) => (
+                  <a
+                    href={`https://squareup.com/us/en/restaurants/${item.slug}`}
+                    target="_blank"
+                    rel="noopener"
+                    class="industry-word"
+                  >
+                    {item.label}{item.myWork && <span class="industry-my-work">* (My work!)</span>}
+                  </a>
+                ))}
+              </div>
+            ) : isVideo(data.images[1].src) ? (
               <video autoplay loop muted playsinline style="width:100%;display:block;">
                 <source src={data.images[1].src.replace(/\.(webm|mp4)$/, '.mp4')} type="video/mp4" />
                 <source src={data.images[1].src.replace(/\.(webm|mp4)$/, '.webm')} type="video/webm" />
               </video>
             ) : (
               <img src={data.images[1].src} alt={data.images[1].alt} loading="lazy" />
-            )
-          )}
-        </div>
-      </div>
-
-      <!-- Row 3: Conclusion + Image 3 -->
-      <div class="cs-row">
-        <div class="cs-text cs-text--conclusion">
-          <h2 class="cs-section-heading">{data.conclusionHeading}</h2>
-          <div class="cs-conclusion">
-            {conclusionParagraphs.map((p) => <p>{p}</p>)}
+            )}
           </div>
+          <div class="csg-text1">
+            {data.bulletPoints.map((point) => <p>{point}</p>)}
+          </div>
+        </>
+      )}
 
-          {data.testimonial && (
-            <blockquote class="cs-testimonial">
-              <p>"{data.testimonial.quote}"</p>
-              <cite>—{data.testimonial.attribution}</cite>
-            </blockquote>
-          )}
-
-          {data.liveUrl && (
-            <a href={data.liveUrl} target="_blank" rel="noopener" class="cs-live-link">
-              See the work live →
-            </a>
-          )}
-        </div>
-
-        <div class="cs-image cs-image--3">
-          {data.images[2] && (
-            data.images[2].src.endsWith('.mp4') || data.images[2].src.endsWith('.webm') ? (
+      <!-- Row 2: [text: 1-2][img: 3-6] -->
+      {data.images[2] && (
+        <>
+          <div class="csg-text2">
+            <div class="cs-conclusion">
+              {conclusionParagraphs.map((p) => <p>{p}</p>)}
+            </div>
+          </div>
+          <div class="csg-img2">
+            {isVideo(data.images[2].src) ? (
               <video autoplay loop muted playsinline style="width:100%;display:block;">
                 <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.mp4')} type="video/mp4" />
                 <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.webm')} type="video/webm" />
               </video>
             ) : (
               <img src={data.images[2].src} alt={data.images[2].alt} loading="lazy" />
-            )
-          )}
+            )}
+          </div>
+        </>
+      )}
+
+      <!-- Quote: [empty][cols 2-5] -->
+      {data.testimonial && (
+        <div class="csg-quote">
+          <blockquote>
+            <p>"{data.testimonial.quote}"</p>
+            <cite>— {data.testimonial.attribution}</cite>
+          </blockquote>
         </div>
-      </div>
+      )}
+
+      <!-- Live URL: [empty][cols 2-3] -->
+      {data.liveUrl && (
+        <div class:list={['csg-url', { 'csg-url--no-quote': !data.testimonial }]}>
+          <a href={data.liveUrl} target="_blank" rel="noopener" class="cs-live-link">
+            See the work live →
+          </a>
+        </div>
+      )}
 
     </div>
   </div>
 
-  <!-- Carousel of other projects -->
+  <!-- Carousel -->
   <div class="carousel" id="carousel">
     <div class="carousel__track-wrap">
       <div class="carousel__track" id="carousel-track">
         {otherProjects.map((project) => (
           <a href={`/work/${project.slug}`} class="carousel__item">
-            <img
-              src={project.data.coverImage}
-              alt={project.data.title}
-              loading="lazy"
-            />
+            <img src={project.data.coverImage} alt={project.data.title} loading="lazy" />
             <span>{project.data.title}</span>
           </a>
         ))}
@@ -167,24 +185,113 @@ const conclusionParagraphs = data.conclusion.trim().split(/\n\n+/);
 
 </Base>
 
+<style>
+  /* ── Opener overlay ── */
+  .cs-opener-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem var(--margin);
+    z-index: 100;
+    transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  .cs-opener-overlay.is-leaving {
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
+  .cs-opener-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 600px;
+  }
+  .cs-opener-text {
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .cs-opener-text .cs-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(6px);
+    animation: cs-word-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes cs-word-in {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .cs-skip {
+    background: none;
+    border: none;
+    font-size: var(--text-xs);
+    color: var(--ink-mid);
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    padding: 16px 0 0;
+    transition: color 0.15s;
+  }
+  .cs-skip:hover { color: var(--ink); }
+
+  /* ── Page content fade-in (only when opener present) ── */
+  .cs-page-content {
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cs-page-content.is-visible { opacity: 1; }
+</style>
+
 <script>
+  // ── Opener animation ──
+  const overlay  = document.getElementById('cs-opener-overlay');
+  const openerEl = document.getElementById('cs-opener-text');
+  const content  = document.getElementById('cs-page-content');
+  const skipBtn  = document.getElementById('cs-skip');
+
+  const WORD_STAGGER = 0.08;
+  const HOLD_MS      = 1200;
+
+  function dismiss() {
+    overlay?.classList.add('is-leaving');
+    setTimeout(() => {
+      overlay?.remove();
+      content?.classList.add('is-visible');
+    }, 700);
+  }
+
+  if (overlay && openerEl) {
+    const words = (openerEl.dataset.opener ?? '').split(' ');
+    const totalRevealMs = words.length * WORD_STAGGER * 1000 + 400;
+
+    openerEl.innerHTML = words
+      .map((w, i) => `<span class="cs-word" style="animation-delay:${(i * WORD_STAGGER).toFixed(2)}s">${w}</span>`)
+      .join(' ');
+
+    setTimeout(dismiss, totalRevealMs + HOLD_MS);
+    skipBtn?.addEventListener('click', dismiss);
+  } else {
+    // No opener — make content visible immediately
+    content?.classList.add('is-visible');
+  }
+
+  // ── Carousel ──
   const track = document.getElementById('carousel-track') as HTMLElement;
-  const prev = document.getElementById('carousel-prev');
-  const next = document.getElementById('carousel-next');
-  let offset = 0;
+  const prev  = document.getElementById('carousel-prev');
+  const next  = document.getElementById('carousel-next');
+  let offset  = 0;
 
   function getItemWidth() {
     const item = track?.querySelector('.carousel__item') as HTMLElement;
     if (!item) return 0;
-    const gap = parseInt(getComputedStyle(track).gap) || 20;
-    return item.offsetWidth + gap;
+    return item.offsetWidth + (parseInt(getComputedStyle(track).gap) || 20);
   }
 
   prev?.addEventListener('click', () => {
     offset = Math.max(0, offset - getItemWidth());
     track.style.transform = `translateX(-${offset}px)`;
   });
-
   next?.addEventListener('click', () => {
     const max = track.scrollWidth - track.parentElement!.offsetWidth;
     offset = Math.min(max, offset + getItemWidth());

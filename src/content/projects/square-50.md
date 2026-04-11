@@ -20,6 +20,7 @@ stats:
     label: Campaign Phases
   - value: "18"
     label: Social Asset Sets
+opener: "Eleven locales. Web, email, socials. Like the incredible caverns of a canyon, some things are only built by continued forces of nature–and that was our team."
 order: 4
 intro: |
   Square 50 was an annual awards campaign celebrating Square merchants, a high-visibility, multi-phase project delivered globally across a landing page, two sets of global emails, and 18 USEN social asset sets totaling 1,331 individual screens. I was asked to lead the production team for this campaign, coordinating two production designers across all three phases.
@@ -27,18 +28,14 @@ intro: |
   This was the project where I most visibly stepped into a leadership role, not just executing, but directing, onboarding, problem-solving, and advocating for smarter ways of working.
 bulletHeading: What I Did
 bulletPoints:
-  - Led two production designers (Brittany and Claudia) across all three campaign phases
-  - Suggested and led adoption of Taxi for email builds, freeing a design technologist from manual build work during her UK trip
-  - Onboarded Brittany onto both Taxi and After Effects, building her capability for future projects
-  - Designed and produced GIF animations for the campaign using After Effects
-  - Built the Phase 3 staging page ahead of schedule for all global locales
-  - Created a detailed animation guide for continuity during any OOO periods
-  - Initiated the grm-ops handoff connection between stakeholders, a gap no one else had closed
+  - "Square 50 was an annual awards campaign celebrating Square merchants, a high-visibility, multi-phase project delivered globally across a landing page, two sets of global emails, and 18 USEN social asset sets totaling 1,331 individual screens. Leading the production team meant coordinating two production designers across all three phases. It was the project where the step into leadership became most visible, not just executing, but directing, onboarding, problem-solving, and advocating for smarter ways of working."
 conclusionHeading: The Systems Thinking
 conclusion: |
-  What I'm most proud of on Square 50 isn't the scale, it's the foresight. Suggesting Taxi for the email build wasn't just a technical decision; it was a people decision. It meant a colleague got to enjoy her time off instead of being paged from London. It meant the team had a documented, repeatable process for future campaigns.
+  One of the first moves was suggesting Taxi for the email builds. Not just a technical recommendation, a people decision. It meant a colleague working remotely from London didn't have to spend her time off manually building emails. It meant the team had a documented, repeatable process that would outlast the campaign. Onboarding the team onto Taxi, getting a junior designer up to speed on After Effects, designing and producing the GIF animations, all of it ran in parallel, building capability in others while delivering the work.
 
-  Leading people is about more than delegation. It's about seeing the whole system, who needs what, where the gaps are, and what you can build now that makes everything easier later. Square 50 gave me the space to do that, and I ran with it.
+  The social team had never worked directly with the web team before. Bridging that gap was one of the most quietly significant things to come out of this project. Initiating the handoff connection between stakeholder groups that no one else had closed built a working relationship between two teams that had been operating in separate lanes, and made the global rollout coherent across all 11 locales.
+
+  What stands out most about Square 50 isn't the scale. It's the foresight. Every decision, the tool adoption, the animation guide, the stakeholder bridge, the mentorship of Raj Solanki through a shadowing arrangement that led to a featured Behance case study, was made with an eye on what would make everything easier later. That's what leading a production team actually means.
 testimonial:
   quote: "Thank you, Olivia, for expertly managing the numerous tasks and requests for Square 50. I appreciate how you handle feedback and updates with such ease and clarity. Your communication and regular updates are truly valuable!"
   attribution: "Nicholas Dahl, Block"

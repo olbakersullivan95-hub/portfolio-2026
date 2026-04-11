@@ -20,6 +20,7 @@ stats:
     label: YoY Signups
   - value: "310x"
     label: BoF NPA Increase
+opener: "A desert looks infinite until someone maps it. Our team mapped it, and we set to the task of crossing it."
 order: 1
 intro: |
   Square's industry landing page was one of many pages in a sprawling public web ecosystem of 17,000+ managed pages. The redesign was part of a broader initiative to modernize Square's public web presence, a multi-phase effort involving designers, developers, product marketing managers, and international stakeholders.
@@ -27,16 +28,12 @@ intro: |
   My role was to make sure that whatever was designed actually shipped, accurately, accessibly, and on time, and that every person touching the project had what they needed to do their part.
 bulletHeading: What I Did
 bulletPoints:
-  - Owned production build and QA across all page variants and device sizes
-  - Managed cross-functional alignment between design, development, and marketing stakeholders
-  - Proactively flagged and resolved technical blockers before they reached launch
-  - Ensured brand, accessibility, and localization standards were met across all components
-  - Served as a consistent point of contact and source of truth throughout the project lifecycle
+  - "Square's industry landing page lived inside a sprawling public web ecosystem that most people didn't know existed and nobody had fully mapped. The redesign was part of a broader initiative to modernize Square's public web presence, a multi-phase effort involving designers, developers, product marketing managers, and international stakeholders who didn't always know each other's names. The role wasn't to concept the visual direction. The work was to make sure that whatever was designed actually shipped, accurately, accessibly, and on time."
 conclusionHeading: The Systems Thinking
 conclusion: |
-  What made this project successful wasn't any single deliverable, it was how the pieces connected. I approached production not as a checklist but as a system: understanding how each asset, each QA round, and each stakeholder decision affected everything downstream. When something was missing or misaligned, I flagged it early and sorted it out, so the design team could stay focused on craft and developers could stay focused on build.
+  That sounds simple. It rarely is. Production work at this scale is less about making things and more about holding things together: understanding which decision affects which downstream dependency, which stakeholder needs to sign off before the developer can build, which QA round needs to happen before the next one can begin. That full chain was mine, production build and QA across all page variants and device sizes, cross-functional alignment between design, development, and marketing, and a constant, quiet effort to surface and resolve blockers before they became anyone else's problem.
 
-  It's the kind of work that doesn't always show up in the credits, but you feel it in the results.
+  What made this project land wasn't a single deliverable. It was the connective tissue, the communication that kept everyone moving in the same direction, the QA that caught the things that would have shipped wrong, the presence that meant every person on the project always knew where things stood. That kind of work doesn't always show up in the credits. It shows up in the results.
 testimonial:
   quote: "Kudos to Jess, Laura, and Olivia for reimagining square.com/industry. Over the past 6 months YoY, the page has seen a 10x in pageviews, a 230x in signups, and a 310x increase in BoF NPA. Amazing results!"
   attribution: "Cyrous Bortey, Block"

@@ -20,6 +20,7 @@ stats:
     label: Output Formats
   - value: "1"
     label: 3D Printed Prototype
+opener: "Sound is invisible until you stop to measure it. I went somewhere quiet to figure out how loud the world actually is."
 order: 8
 intro: |
   For my Master of Design thesis at NSCAD University, I asked a question that sits at the intersection of sustainability, health, and design: how can design create awareness around sound pollution and its effects on human wellbeing?
@@ -27,16 +28,13 @@ intro: |
   The thesis explored this through research, in-field sound sampling, and a final product concept: an aesthetically-driven earplug designed to function as jewellery. The idea was to normalize ear protection by making it beautiful and visible, something you'd wear proudly, not hide.
 bulletHeading: What I Made
 bulletPoints:
-  - Conducted in-field research gathering sound samples across 5 locations, then graphically analyzed and visualized the findings
-  - Designed multiple thesis infographics connecting sound pollution data to stress and health outcomes
-  - Created original soundscapes as part of the multidisciplinary output
-  - Developed 3D printed mockups of the earplug-as-jewellery concept with final product renderings in multiple colorways
-  - Designed a full thesis book and process book from scratch, largely self-directed
-  - Built a documentation website to accompany the thesis work throughout the process
+  - "For the Master of Design thesis at NSCAD University, the question was one that sits at the intersection of sustainability, health, and design: how can design create awareness around sound pollution and its effects on human wellbeing? As a musician, sound pollution had always felt like an invisible, underacknowledged problem, present everywhere, designed around almost nowhere. The thesis was an attempt to make it visible."
 conclusionHeading: The Design Thinking
 conclusion: |
-  The earplug as jewellery concept worked on two levels: functional and cultural. Functionally, it delivered hearing protection. Culturally, it made that protection legible, the decorative element emerging from the ear became a quiet signal that acoustic health matters.
+  The research phase was immersive and genuinely in-field. Sound samples were gathered across five locations over a month-long period, then graphically analyzed and visualized, translating raw acoustic data into something a reader could actually see and feel. Alongside that, original soundscapes were created as part of the multidisciplinary output, and thesis infographics were developed connecting sound pollution data to stress and health outcomes.
 
-  What I didn't know at the time was that a product bearing striking similarity to this concept, Loop earplugs, would launch and become mainstream shortly after. I had 3D printed the prototype before I'd ever heard of them. That convergence still feels like confirmation that the instinct was right.
+  The final product concept was an earplug designed as jewellery, normalizing ear protection by making it beautiful and visible, something you'd wear proudly rather than hide. The prototype was 3D printed, developed in multiple colorways, and accompanied by a full thesis book and process book that were largely self-directed, with minimal faculty feedback on the editorial design. A documentation website tracked and shared the process throughout.
+
+  What wasn't known at the time was that a product bearing striking similarity to this concept, Loop earplugs, would launch and go mainstream not long after. The prototype had already been printed before they were ever heard of. That convergence still feels like confirmation that the instinct was right. The thesis also marked the first time a large, self-directed creative project was held together from research through to final output, across multiple formats and disciplines. That capacity has defined the work ever since.
 liveUrl: "https://bodiesandsound.myportfolio.com/work"
 ---

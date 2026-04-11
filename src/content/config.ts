@@ -12,6 +12,7 @@ const projects = defineCollection({
     coverImage: z.string(),
     images: z.array(z.object({ src: z.string(), alt: z.string() })),
     stats: z.array(z.object({ value: z.string(), label: z.string() })).optional(),
+    opener: z.string().optional(),
     order: z.number(),
     // Structured content — each section aligns with its corresponding image
     intro: z.string(),                    // aligns with images[0]

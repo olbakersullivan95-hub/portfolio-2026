@@ -20,6 +20,7 @@ stats:
     label: to Hold It All
   - value: "Live"
     label: on pages.ebay.com
+opener: "Building modules that last is like reaching a summit: it isn't until you have all the parts and continually look at a view from the peak, that you know you've put together something that works."
 order: 6
 intro: |
   Small Business Saturday is a high-visibility moment for eBay, an opportunity to spotlight the independent sellers who make the platform what it is. For this landing page, the challenge was featuring multiple individual sellers, each with their own story and accompanying video, on a single cohesive page that felt celebratory without becoming chaotic.
@@ -27,15 +28,11 @@ intro: |
   We started with a client-provided wireframe. As is often the case, the wireframe captured the required content but hadn't fully solved the design problem, there was redundancy, unclear hierarchy, and an uneasy balance between giving each seller their own spotlight and keeping the page readable as a whole.
 bulletHeading: What I Did
 bulletPoints:
-  - Analyzed the client wireframe to identify redundant information and hierarchy issues before beginning design
-  - Worked with the team to simplify and restructure the content flow
-  - Designed a layout that balanced individual seller representation with the overall page narrative
-  - Integrated per-seller video content in a way that felt native to the page rather than bolted on
-  - Delivered a page that went live on eBay's platform for the Small Business Saturday campaign
+  - "The ask was deceptively contained: one landing page, multiple sellers, each with their own story and video, for one of eBay's highest-visibility campaign moments of the year. A client wireframe came with it. The wireframe captured the required content but hadn't fully solved the design problem, there was redundancy, unclear hierarchy, and an uneasy balance between giving each seller their own spotlight and keeping the page readable as a whole."
 conclusionHeading: The Design Thinking
 conclusion: |
-  Landing pages are deceptively hard. The job is to make a complex brief feel simple, and in this case, the complexity was human: multiple real people, each deserving of genuine representation, all sharing the same canvas.
+  Before opening a design tool, the wireframe got a thorough read to identify what wasn't working and why. The content flow was restructured with the team, deciding what to lead with, what to subordinate, where to create breathing room, and how to integrate per-seller video in a way that felt native rather than bolted on. The goal was that someone arriving during a busy Saturday of shopping would leave feeling like they'd actually met these sellers, not just scrolled past a list of businesses.
 
-  The solution was hierarchy as hospitality. Every structural decision, where a seller's name appeared, how their video was framed, how much text sat alongside their image, was in service of the reader's experience moving through the page. When a page about real people is done right, it feels less like a layout and more like an introduction.
+  Landing pages are deceptively hard precisely because the work is making complexity feel simple. Here, the complexity was human: multiple real people, each deserving genuine representation, all sharing the same canvas. The solution was treating hierarchy as hospitality, every structural decision was in service of the reader moving through the page. It went live on eBay.com for the Small Business Saturday campaign.
 liveUrl: "https://www.ebay.ca/sellercentre/ebay-for-business/ebay-for-small-business"
 ---

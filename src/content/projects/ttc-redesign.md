@@ -20,6 +20,7 @@ stats:
     label: Team Members
   - value: "Hi-Fi"
     label: Figma Prototype Delivered
+opener: "Some ideas are volcanic, enormous, vivid. The TTC redesign was one of them. We rebuilt the TTC app from the ground up."
 order: 12
 intro: |
   In spring 2025, I participated in a structured product design mentorship program focused on accessibility and user experience, working under a senior mentor alongside a team of two other product designers and one product lead. Our project was a complete redesign of the TTC (Toronto Transit Commission) app, one of the most used and most criticized transit apps in Canada.
@@ -27,17 +28,14 @@ intro: |
   The brief was genuinely ambitious: not a refresh, but a ground-up rethink of how a transit app could better serve a diverse urban population, with particular attention to accessibility, clarity, and real-world usability under the conditions people actually use transit apps, moving, distracted, often stressed.
 bulletHeading: What We Built
 bulletPoints:
-  - Conducted UX research to identify core pain points and accessibility gaps in the existing TTC app
-  - Developed a phased project plan, breaking the redesign into structured workstreams with clear deliverables
-  - Redesigned the full app UI from scratch, the only retained elements were the TTC brand colours and typeface
-  - Built a high-fidelity interactive prototype in Figma, with full navigation flows and interaction states
-  - Created a presentation deck documenting the process, decisions, and rationale across the full redesign
-  - Applied accessibility principles throughout, informed by mentorship from a senior specialist in product accessibility
+  - "In spring 2025, a structured product design mentorship program brought together two other product designers and a product lead for a complete ground-up redesign of the TTC app, one of the most used and most criticized transit apps in Canada. The brief was genuinely ambitious: not a refresh, but a rethink of how a transit app could better serve a diverse urban population, with real attention to accessibility, clarity, and the actual conditions people use transit apps in, moving, distracted, often stressed."
 conclusionHeading: What I Learned
 conclusion: |
-  This project was the most structured product design experience I'd had outside of a professional context, and it pushed me in directions my production work at Block hadn't fully explored, particularly in systematic UX thinking and accessibility-first design decisions.
+  UX research identified core pain points and accessibility gaps, a phased project plan was developed, and the full app UI was redesigned from scratch. The only retained elements were the TTC brand colours and typeface. Everything else, navigation architecture, information hierarchy, interaction states, accessibility decisions, was rebuilt with intention, resulting in a high-fidelity interactive prototype in Figma and a full presentation documenting the process and rationale.
 
-  Working under a senior mentor with deep accessibility expertise changed how I think about inclusive design. Accessibility isn't a checklist or a compliance layer, it's a design constraint that, when taken seriously from the beginning, makes the product better for everyone. The prototype is live in Figma. This was unpaid, voluntary, and one of the most genuinely educational experiences of the past two years.
+  The work was presented directly to the TTC. They were genuinely enthusiastic. The reason it didn't move forward wasn't the quality of the design, it was budget. The TTC needed to prioritize engineering safer buses for drivers, following a period of serious attacks on transit workers. That's the right call. Some problems are more urgent than others, and a design team that can recognize that is doing its job.
+
+  Working under a senior mentor with deep accessibility expertise changed how inclusive design gets approached. Accessibility isn't a checklist or a compliance layer, it's a constraint that, taken seriously from the beginning, makes the product better for everyone. The prototype is live in Figma. The work was unpaid, voluntary, and one of the most genuinely educational experiences of the past two years.
 testimonial:
   quote: "It was an absolute privilege to mentor such a bright and talented team, Olivia, Eloise, Khaosara and Camille. Their proactive approach to feedback propelled the development of the Safe-Transit App, a versatile platform designed to boost transit safety. This white-label application not only enables incident reporting with optional anonymity but also fosters community connectivity by providing real-time updates on reports and Transit Watch activities. Their dedication and innovative spirit were instrumental in evolving the initial SafeTTC app concept into a robust urban transit system."
   attribution: "Magued Hanna RGD"

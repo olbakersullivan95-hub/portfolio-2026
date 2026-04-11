@@ -20,6 +20,7 @@ stats:
     label: Steve Aoki Retweet & Purchase
   - value: "3 day"
     label: Oreo Cop the Drop Turnaround
+opener: "Some valleys are wide and slow. This one moved fast. eBay's social program ran on a week-and-a-half cycle, tight enough that if you blinked, the moment was gone."
 order: 7
 intro: |
   eBay North America's social program ran on a week-and-a-half sprint cycle, tight enough to stay genuinely responsive to whatever was happening on the internet. That constraint shaped everything: the aesthetic, the process, the creative thinking.
@@ -27,14 +28,10 @@ intro: |
   The work leaned into flat lays of featured products and found its energy in pop culture tie-ins, series moments, and limited drops. When something broke in culture, the goal was to have eBay's version of it ready before the moment passed.
 bulletHeading: The Work
 bulletPoints:
-  - Concepted and produced a Ted Lasso Halloween costume post, writing the copy and creating the imagery to tie eBay's inventory to one of the biggest shows of the moment
-  - Designed and animated a post for DJ Skee's auction of 10 signed collector cards, proposing animation when it became clear a static frame couldn't do justice to the full collection
-  - "The DJ Skee post drove immediate results: Steve Aoki retweeted it, then purchased the set"
-  - Executed a 3-day turnaround for the "Cop the Drop" Oreo series when the collaboration was announced earlier than anticipated, making the product feel as urgent and exciting as the drop itself
-  - Maintained a consistent flat lay visual language across posts while keeping each piece tied to its specific cultural moment
+  - "DJ Skee was auctioning a set of 10 signed collector cards on eBay. The brief was straightforward: a static social post to promote the auction. The problem was immediately apparent, 10 distinct cards in a single static frame would either be too small to appreciate or too crowded to read. A static post wasn't going to do justice to the collection, or to the auction's potential."
 conclusionHeading: The Design Thinking
 conclusion: |
-  The best social creative doesn't look like social creative. It looks like something worth sharing.
+  An animation was proposed, the case was made to the team, and when the client gave the go-ahead, it got designed and produced, giving each card its own moment while maintaining a cohesive, high-energy feel appropriate for a collector auction. The copy team collaborated on headline language that communicated the significance of the collection quickly and compellingly.
 
-  Working at sprint speed meant every decision had to be instinctive and defensible: the right format, the right framing, the right cultural entry point. Sometimes that meant proposing animation when the brief said static. Sometimes it meant building an entire post concept around a show's Halloween moment or a snack brand's surprise drop. The constraint of the sprint cycle wasn't a limitation, it was what made the work feel alive.
+  The campaign objective was achieved almost immediately after posting. Steve Aoki retweeted, then purchased the set. The best creative decisions often start with recognizing what the brief is actually asking for underneath what it literally says. Pushing the format a little further was exactly what the work needed.
 ---
