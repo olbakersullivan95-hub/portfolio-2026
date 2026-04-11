@@ -9,10 +9,10 @@ coverImage: /images/projects/nscad-es-brand/img-1.webp
 images:
   - src: /images/projects/nscad-es-brand/img-1.webp
     alt: NSCAD Extended Studies brand
-  - src: /images/projects/nscad-es-brand/img-2.webp
-    alt: NSCAD Extended Studies brand, process
   - src: /images/projects/nscad-es-brand/img-3.webp
     alt: NSCAD Extended Studies brand, detail
+  - src: /images/projects/nscad-es-brand/img-2.webp
+    alt: NSCAD Extended Studies brand, process
 stats:
   - value: "6+"
     label: Years Stylesheet Unchanged

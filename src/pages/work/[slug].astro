@@ -130,7 +130,7 @@ function isVideo(src: string) {
               {conclusionParagraphs.map((p) => <p>{p}</p>)}
             </div>
           </div>
-          <div class="csg-img2">
+          <div class:list={['csg-img2', { 'csg-img2--narrow': slug === 'nscad-es-web' }]}>
             {isVideo(data.images[2].src) ? (
               <video autoplay loop muted playsinline style="width:100%;display:block;">
                 <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.mp4')} type="video/mp4" />
@@ -147,7 +147,7 @@ function isVideo(src: string) {
       {data.testimonial && (
         <div class="csg-quote">
           <blockquote>
-            <p>"{data.testimonial.quote}"</p>
+            <p>&ldquo;{data.testimonial.quote}&rdquo;</p>
             <cite>— {data.testimonial.attribution}</cite>
           </blockquote>
         </div>

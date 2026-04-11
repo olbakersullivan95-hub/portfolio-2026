@@ -34,8 +34,6 @@ conclusion: |
   One of the first moves was suggesting Taxi for the email builds. Not just a technical recommendation, a people decision. It meant a colleague working remotely from London didn't have to spend her time off manually building emails. It meant the team had a documented, repeatable process that would outlast the campaign. Onboarding the team onto Taxi, getting a junior designer up to speed on After Effects, designing and producing the GIF animations, all of it ran in parallel, building capability in others while delivering the work.
 
   The social team had never worked directly with the web team before. Bridging that gap was one of the most quietly significant things to come out of this project. Initiating the handoff connection between stakeholder groups that no one else had closed built a working relationship between two teams that had been operating in separate lanes, and made the global rollout coherent across all 11 locales.
-
-  What stands out most about Square 50 isn't the scale. It's the foresight. Every decision, the tool adoption, the animation guide, the stakeholder bridge, the mentorship of Raj Solanki through a shadowing arrangement that led to a featured Behance case study, was made with an eye on what would make everything easier later. That's what leading a production team actually means.
 testimonial:
   quote: "Thank you, Olivia, for expertly managing the numerous tasks and requests for Square 50. I appreciate how you handle feedback and updates with such ease and clarity. Your communication and regular updates are truly valuable!"
   attribution: "Nicholas Dahl, Block"
