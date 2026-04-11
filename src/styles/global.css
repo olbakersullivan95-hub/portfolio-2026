@@ -807,15 +807,6 @@ img { display: block; width: 100%; }
 
   .grid--home .grid__item-label { max-height: 6rem; padding: 10px 0; }
 
-  .case-study-grid { grid-template-columns: 1fr; }
-  .cs-text { grid-column: 1; }
-  .cs-image { grid-column: 1; }
-  .cs-text--intro { padding-bottom: 1.5rem; }
-  .cs-image--1    { padding-bottom: 1.5rem; }
-  .cs-text--bullets { padding-bottom: 1.5rem; }
-  .cs-image--2      { padding-bottom: 1.5rem; }
-  .cs-text--conclusion { padding-bottom: 40px; }
-
   .shop-detail { flex-direction: column; }
   .shop-detail__left,
   .shop-detail__right { flex: 0 0 100%; }
@@ -827,22 +818,35 @@ img { display: block; width: 100%; }
    RESPONSIVE — mobile
    ========================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   :root {
     --margin: 20px;
     --gutter: 10px;
   }
 
-  .grid--home .home-col { flex: 0 0 calc(50% - var(--gutter) / 2); }
-
   .nav-filters { display: none; }
 
-  .cs-title { font-size: 2rem; }
+  /* Case study section 1: stack to single column */
+  .case-study-grid { grid-template-columns: 1fr; }
+  .cs-text  { grid-column: 1; }
+  .cs-image { grid-column: 1; }
+  .cs-text--intro { padding-bottom: 1.5rem; }
+  .cs-image--1    { padding-bottom: 1.5rem; }
+
+  /* Case study body grid: stack to single column */
+  .cs-body-grid {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+    padding: 40px 0 3rem;
+  }
+  .csg-img1, .csg-text1,
+  .csg-text2, .csg-img2,
+  .csg-img3, .csg-text3,
+  .csg-quote,
+  .csg-url, .csg-url--no-quote { grid-column: 1; }
+
+  .cs-title   { font-size: 2rem; }
   .stat-value { font-size: 1.35rem; }
 
-  .carousel__arrow { padding: 30px 30px; margin: -30px -30px; }
-
-  /* 20px minimum spacing system */
   .shop-detail { gap: 20px; }
-  .carousel__track { gap: 20px; }
 }
