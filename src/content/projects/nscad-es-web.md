@@ -9,10 +9,10 @@ coverImage: /images/projects/nscad-es-web/img-1.webp
 images:
   - src: /images/projects/nscad-es-web/img-1.webp
     alt: NSCAD Extended Studies website
-  - src: /images/projects/nscad-es-web/img-2.webp
-    alt: NSCAD Extended Studies website, process
   - src: /images/projects/nscad-es-web/img-3.webp
     alt: NSCAD Extended Studies website, detail
+  - src: /images/projects/nscad-es-web/img-2.webp
+    alt: NSCAD Extended Studies website, process
 stats:
   - value: "6+"
     label: Years Live and Unchanged

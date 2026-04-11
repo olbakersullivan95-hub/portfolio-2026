@@ -12,7 +12,9 @@ images:
   - src: /images/projects/ebay-1/img-2.webp
     alt: eBay email template system, process
   - src: /images/projects/ebay-1/img-3.webp
-    alt: eBay email template system, detail
+    alt: eBay homepage
+  - src: /images/projects/ebay-1/img-4.webp
+    alt: ASICS email campaign
 stats:
   - value: "26+"
     label: Distinct Template Types
