@@ -20,7 +20,7 @@ stats:
     label: Stylesheet from Scratch
   - value: "Live"
     label: Still in Active Use
-opener: "Streams don't stop at city limits, and neither did the work. From Halifax to Toronto and brief to brand system, and they're still running today."
+opener: "Streams do not stop at city limits and neither did this work and what began as a brief became a brand system and the thing ran from Halifax to Toronto and it is still running now like the first fire which contains within it all fires ever to be."
 order: 10
 intro: |
   As part of the NSCAD Extended Studies brand project, I built and developed the department website from scratch, writing the stylesheet entirely in Visual Studio. A stylesheet that remains unchanged six years later.

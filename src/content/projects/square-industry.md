@@ -20,7 +20,7 @@ stats:
     label: YoY Signups
   - value: "310x"
     label: BoF NPA Increase
-opener: "A desert looks infinite until someone maps it. Our team mapped it, and we set to the task of crossing it."
+opener: "A desert looks infinite until someone maps it and then it is only the work itself, the long and burning traverse of it, and the party moves out into the inordinate day and does not stop and does not look back at what recedes behind them in the alkali white."
 order: 1
 intro: |
   Square's industry landing page was one of many pages in a sprawling public web ecosystem of 17,000+ managed pages. The redesign was part of a broader initiative to modernize Square's public web presence, a multi-phase effort involving designers, developers, product marketing managers, and international stakeholders.

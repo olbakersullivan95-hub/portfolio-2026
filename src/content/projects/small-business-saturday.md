@@ -20,7 +20,7 @@ stats:
     label: to Hold It All
   - value: "Live"
     label: on pages.ebay.com
-opener: "Building modules that last is like reaching a summit: it isn't until you have all the parts and continually look at a view from the peak, that you know you've put together something that works."
+opener: "The summit does not reveal itself until you are standing upon it and looking back at the whole terrible distance of the climb and only then do you see that the modules hold and the thing is finished and it was the continual looking from the peak that made it so."
 order: 6
 intro: |
   Small Business Saturday is a high-visibility moment for eBay, an opportunity to spotlight the independent sellers who make the platform what it is. For this landing page, the challenge was featuring multiple individual sellers, each with their own story and accompanying video, on a single cohesive page that felt celebratory without becoming chaotic.

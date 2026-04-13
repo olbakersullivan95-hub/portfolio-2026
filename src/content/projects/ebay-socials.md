@@ -20,7 +20,7 @@ stats:
     label: Steve Aoki Retweet & Purchase
   - value: "3 day"
     label: Oreo Cop the Drop Turnaround
-opener: "Some valleys are wide and slow. This one moved fast. eBay's social program ran on a week-and-a-half cycle, tight enough that if you blinked, the moment was gone."
+opener: "Some valleys are wide and move slow but this one ran on a week-and-a-half cycle and the embers paled and deepened and paled and deepened without ceasing and if you looked away the moment was already gone and there was only the next one burning in its place."
 order: 7
 intro: |
   eBay North America's social program ran on a week-and-a-half sprint cycle, tight enough to stay genuinely responsive to whatever was happening on the internet. That constraint shaped everything: the aesthetic, the process, the creative thinking.

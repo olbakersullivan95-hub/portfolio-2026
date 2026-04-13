@@ -20,7 +20,7 @@ stats:
     label: Campaign Phases
   - value: "18"
     label: Social Asset Sets
-opener: "Eleven locales. Web, email, socials. Like the incredible caverns of a canyon, some things are only built by continued forces of nature–and that was our team."
+opener: "Eleven locales routed forth into the work, web and email and socials, and what the canyon takes a thousand years to open by the slow and wanton forces of the earth our team cut in a season and the thing stood after and it stands still."
 order: 4
 intro: |
   Square 50 was an annual awards campaign celebrating Square merchants, a high-visibility, multi-phase project delivered globally across a landing page, two sets of global emails, and 18 USEN social asset sets totaling 1,331 individual screens. I was asked to lead the production team for this campaign, coordinating two production designers across all three phases.

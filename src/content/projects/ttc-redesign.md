@@ -20,7 +20,7 @@ stats:
     label: Team Members
   - value: "Hi-Fi"
     label: Figma Prototype Delivered
-opener: "Some ideas are volcanic, enormous, vivid. The TTC redesign was one of them. We rebuilt the TTC app from the ground up."
+opener: "Some ideas are volcanic and arrive enormous and already whole like something forced up from below the earth and this was one of them and we rebuilt the thing from the ground up and the evening redness spread out over it when it was done."
 order: 12
 intro: |
   In spring 2025, I participated in a structured product design mentorship program focused on accessibility and user experience, working under a senior mentor alongside a team of two other product designers and one product lead. Our project was a complete redesign of the TTC (Toronto Transit Commission) app, one of the most used and most criticized transit apps in Canada.

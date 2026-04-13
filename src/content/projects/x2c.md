@@ -20,7 +20,7 @@ stats:
     label: International Markets
   - value: "1 mo."
     label: vs. 4-Month Standard Timeline
-opener: "One month, seven markets. The mountain didn't move, and neither did the deadline."
+opener: "Seven markets and one month and the mountain did not offer itself to us nor did we ask it to and we moved through it like travelers who have ceased to speak between them, the silence of people who know the journey's end is near and have said what needed saying."
 order: 3
 intro: |
   The X2C hardware product GTM launch was scoped as a standard four-month project. It became a one-month sprint. The launch needed to go live across 20+ pages and 7 international markets, US, EU, CA, AU, JP, and more, with full QA, localized assets, and stakeholder sign-off from product marketing managers across every region.

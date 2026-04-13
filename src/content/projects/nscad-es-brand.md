@@ -20,7 +20,7 @@ stats:
     label: Deliverable Types
   - value: "Live"
     label: Templates in Active Use
-opener: "I built things in 2020 that people are still using in 2026. From Halifax to Toronto, administrator to designer, and one webpage later–the road goes on."
+opener: "I built things in 2020 that people are still using in 2026 and the road goes on from Halifax to Toronto and administrator to designer and the work routed forth into forms I did not foresee and they are not finished yet and may never be."
 order: 9
 intro: |
   While working as an administrator at NSCAD University, I proposed taking on the branding for the Extended Studies department, an initiative I identified, scoped, and pitched myself. The department needed a cohesive visual identity that could sit alongside NSCAD University's broader brand guidelines while feeling distinct and ownable for Extended Studies specifically.

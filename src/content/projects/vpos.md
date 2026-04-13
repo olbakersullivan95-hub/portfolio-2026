@@ -20,7 +20,7 @@ stats:
     label: Annualized Incremental NVA
   - value: "Global"
     label: Multi-locale Launch
-opener: "Canyons don't get carved in a day, but webpages can we. We sprinted a series of restructuring our four major mode pages in the span of a month."
+opener: "Four pages and one month and the restructuring of things that had stood long enough to forget why they stood and the work went on through the small hours and the deadline did not move and neither did we and at the last it was done and the evening came down red in the west."
 order: 2
 intro: |
   VPOS (Virtual Point of Sale) pages were among Square's highest-stakes public web properties, product pages directly tied to merchant acquisition and bottom-of-funnel conversion. These pages needed to work across multiple locales, devices, and use cases, with tight coordination between design, engineering, and product marketing.

@@ -22,7 +22,7 @@ stats:
     label: Recurring Sprint Cycle
   - value: "3+"
     label: "Verticals: Handbags, Watches, Sneakers"
-opener: "Like the many combs of a slot canyon, building out a system contains multitudes and ripples through all design executions made."
+opener: "A system is not built so much as it accretes, decision on decision and layer on layer like some geologic patient thing, until it holds the weight of everything placed upon it and the work of those who came before is not lost but folded in, and the many combs of it run deep and are still running."
 order: 5
 intro: |
   At FEED/DEPT, I was embedded in the eBay North America account as a Digital/UX Designer, producing email campaigns across eBay's major verticals, handbags, watches, sneakers, and beyond. The work ran on a tight 2-week sprint cycle, requiring both creative consistency and the ability to adapt quickly to new briefs, products, and seasonal moments.
