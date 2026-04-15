@@ -1,18 +1,18 @@
 ---
 title: Square Industry Page Redesign
-subtitle: From Invisible Page to Top-Performing Asset
+subtitle: Building a Front Door That Actually Goes Somewhere
 employer: Block / Square
 period: "2025"
-tags: ["Systems Thinking", "Production", "QA", "Stakeholder Mgmt", "Web"]
+tags: ["Systems Thinking", "Production", "QA", "Stakeholder Management", "Web / SEO"]
 categories: ["UX", "Product"]
 coverImage: /images/projects/block-1/img-1.webp
 images:
   - src: /images/projects/block-1/img-1.webp
-    alt: Square industry page redesign
+    alt: Square Industry Page Redesign
   - src: /images/projects/block-1/img-2.mp4
-    alt: Square industry page redesign, process
+    alt: Square Industry, animation
   - src: /images/projects/block-1/img-3.webp
-    alt: Square industry page redesign, detail
+    alt: Square Industry, detail
 stats:
   - value: "10x"
     label: YoY Pageviews
@@ -22,18 +22,29 @@ stats:
     label: BoF NPA Increase
 opener: "A desert looks infinite until someone maps it and then it is only the work itself, the long and burning traverse of it, and the party moves out into the inordinate day and does not stop and does not look back at what recedes behind them in the alkali white."
 order: 1
-intro: |
-  Square's industry landing page was one of many pages in a sprawling public web ecosystem of 17,000+ managed pages. The redesign was part of a broader initiative to modernize Square's public web presence, a multi-phase effort involving designers, developers, product marketing managers, and international stakeholders.
+skills:
+  - "Systems thinking"
+  - "Production"
+  - "QA"
+  - "Stakeholder management"
+  - "Web / SEO strategy"
+metaRow:
+  role: "Web Designer"
+  team: "3-person team"
+  scope: "17,000+ page ecosystem"
+problem: |
+  Square's industry landing page lived inside a public web ecosystem most people didn't know existed — 17,000+ pages, largely unmapped, with no unified ownership. The redesign was part of a broader initiative to modernise Square's public web presence, but the harder design problem wasn't visual. It was strategic: how do you build a page that's audience-agnostic without becoming a fallback?
 
-  My role was to make sure that whatever was designed actually shipped, accurately, accessibly, and on time, and that every person touching the project had what they needed to do their part.
-bulletHeading: What I Did
-bulletPoints:
-  - "Square's industry landing page lived inside a sprawling public web ecosystem that most people didn't know existed and nobody had fully mapped. The redesign was part of a broader initiative to modernize Square's public web presence, a multi-phase effort involving designers, developers, product marketing managers, and international stakeholders who didn't always know each other's names. The role wasn't to concept the visual direction. The work was to make sure that whatever was designed actually shipped, accurately, accessibly, and on time."
-conclusionHeading: The Systems Thinking
-conclusion: |
-  That sounds simple. It rarely is. Production work at this scale is less about making things and more about holding things together: understanding which decision affects which downstream dependency, which stakeholder needs to sign off before the developer can build, which QA round needs to happen before the next one can begin. That full chain was mine, production build and QA across all page variants and device sizes, cross-functional alignment between design, development, and marketing, and a constant, quiet effort to surface and resolve blockers before they became anyone else's problem.
+  The industry page needed to welcome everyone — bakeries, bars, food trucks, full-service restaurants — while actively guiding users toward the subcategory pages where they'd find the products relevant to them. A catch-all that still pushed people somewhere. A front door that wasn't a dead end.
+theMoment: |
+  The central tension surfaced during production: how to structure a page that was both entry point and navigator. A pivotal call I made was around the global navigation link — I proposed and demoed structuring it as a visually subordinate element relative to the "All industries →" link, a small but deliberate hierarchy signal that reinforced the audience pages as the primary destination rather than the industry index. It sounds minor, but it was the structural decision that resolved the front-door problem without requiring the page itself to carry all that weight alone.
 
-  What made this project land wasn't a single deliverable. It was the connective tissue, the communication that kept everyone moving in the same direction, the QA that caught the things that would have shipped wrong, the presence that meant every person on the project always knew where things stood. That kind of work doesn't always show up in the credits. It shows up in the results.
+  Timing helped with the visual side of things. Fresh photography had just been shot for each subcategory — bakeries, bars, coffee shops, food trucks — and integrating that imagery into the index page gave it warmth and specificity, while the page structure and metadata handled the indexing and funnelling work underneath.
+arcDiagram: /images/arcs/square-industry.svg
+whatICarryForward: |
+  This project sharpened how I think about dependency mapping upfront. The navigation decision had downstream effects on page structure, metadata, SEO, and how the subcategory pages were linked — and surfacing that dependency early, rather than letting it emerge during QA, kept it from becoming a last-minute structural change.
+
+  I now treat navigation architecture as a production dependency, something that gets scoped and resolved at the beginning of the work rather than revisited at the end.
 testimonial:
   quote: "Kudos to Jess, Laura, and Olivia for reimagining square.com/industry. Over the past 6 months YoY, the page has seen a 10x in pageviews, a 230x in signups, and a 310x increase in BoF NPA. Amazing results!"
   attribution: "Cyrous Bortey, Block"

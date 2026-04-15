@@ -17,11 +17,19 @@ if (!activeProject) return Astro.redirect('/work');
 const otherProjects = allProjects.filter((p) => p.slug !== slug);
 const { data } = activeProject;
 
-const introParagraphs = data.intro.trim().split(/\n\n+/);
-const conclusionParagraphs = data.conclusion.trim().split(/\n\n+/);
+const isV2 = !!data.problem;
+
+// ── v1 vars ──
+const introParagraphs = !isV2 && data.intro ? data.intro.trim().split(/\n\n+/) : [];
+const conclusionParagraphs = !isV2 && data.conclusion ? data.conclusion.trim().split(/\n\n+/) : [];
 const hasRow3 = !!data.images[3];
 const conclusionPart1 = hasRow3 ? conclusionParagraphs.slice(0, 2) : conclusionParagraphs;
 const conclusionPart2 = hasRow3 ? conclusionParagraphs.slice(2) : [];
+
+// ── v2 vars ──
+const problemParagraphs     = isV2 && data.problem          ? data.problem.trim().split(/\n\n+/)          : [];
+const momentParagraphs      = isV2 && data.theMoment        ? data.theMoment.trim().split(/\n\n+/)        : [];
+const forwardParagraphs     = isV2 && data.whatICarryForward ? data.whatICarryForward.trim().split(/\n\n+/) : [];
 
 function isVideo(src: string) {
   return src.endsWith('.mp4') || src.endsWith('.webm');
@@ -47,7 +55,12 @@ function isVideo(src: string) {
       <div class="cs-row">
         <div class="cs-text cs-text--intro">
           <h1 class="cs-title">{data.title}</h1>
-          <p class="cs-meta">{data.employer} · {data.period}</p>
+          <p class="cs-meta">
+            {data.employer} · {data.period}
+            {isV2 && data.metaRow && (
+              <> · {data.metaRow.role} · {data.metaRow.team} · {data.metaRow.scope}</>
+            )}
+          </p>
 
           {data.stats && (
             <ul class="cs-stats">
@@ -64,9 +77,20 @@ function isVideo(src: string) {
             {data.tags.map((tag) => <li>{tag}</li>)}
           </ul>
 
-          <div class="cs-intro">
-            {introParagraphs.map((p) => <p>{p}</p>)}
-          </div>
+          {/* v1: intro text */}
+          {!isV2 && introParagraphs.length > 0 && (
+            <div class="cs-intro">
+              {introParagraphs.map((p) => <p>{p}</p>)}
+            </div>
+          )}
+
+          {/* v2: The problem text (sits below tags in Section 1) */}
+          {isV2 && problemParagraphs.length > 0 && (
+            <div class="cs-problem">
+              <span class="csb2-label">The problem</span>
+              {problemParagraphs.map((p) => <p>{p}</p>)}
+            </div>
+          )}
         </div>
 
         <div class="cs-image cs-image--1">
@@ -80,84 +104,135 @@ function isVideo(src: string) {
       </div>
     </div>
 
-    <!-- ── Section 2: asymmetric narrative grid ── -->
+    <!-- ── Section 2: narrative body ── -->
     <div class="cs-body-grid">
 
-      <!-- Row 1: [empty][img: 2-3][text: 4-5][empty] -->
-      {data.images[1] && (
+      {isV2 ? (
         <>
-          <div class="csg-img1">
-            {slug === 'square-industry' ? (
-              <div class="industry-words">
-                {[
-                  { label: 'Bakeries',            href: 'https://squareup.com/us/en/restaurants/bakery' },
-                  { label: 'Bars & Breweries',    href: 'https://squareup.com/us/en/restaurants/bars',          myWork: true },
-                  { label: 'Catering',            href: 'https://squareup.com/us/en/restaurants/caterers' },
-                  { label: 'Coffee Shops',        href: 'https://squareup.com/us/en/restaurants/coffee-shop' },
-                  { label: 'Food Trucks',         href: 'https://squareup.com/us/en/restaurants/food-truck',    myWork: true },
-                  { label: 'Full Service',        href: 'https://squareup.com/us/en/restaurants/full-service',  myWork: true },
-                  { label: 'Quick Service',       href: 'https://squareup.com/us/en/restaurants/quick-service', myWork: true },
-                  { label: 'All Food & Beverage', href: 'https://squareup.com/us/en/restaurants' },
-                ].map((item) => (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener"
-                    class="industry-word"
-                  >
-                    {item.label}{item.myWork && <span class="industry-my-work">* (My work!)</span>}
-                  </a>
-                ))}
-              </div>
-            ) : isVideo(data.images[1].src) ? (
-              <video autoplay loop muted playsinline style="width:100%;display:block;">
-                <source src={data.images[1].src.replace(/\.(webm|mp4)$/, '.mp4')} type="video/mp4" />
-                <source src={data.images[1].src.replace(/\.(webm|mp4)$/, '.webm')} type="video/webm" />
-              </video>
-            ) : (
-              <img src={data.images[1].src} alt={data.images[1].alt} loading="lazy" />
-            )}
-          </div>
-          <div class="csg-text1">
-            {data.bulletPoints.map((point) => <p>{point}</p>)}
-          </div>
-        </>
-      )}
-
-      <!-- Row 2: [text: 1-2][img: 3-6] -->
-      {data.images[2] && (
-        <>
-          <div class="csg-text2">
-            <div class="cs-conclusion">
-              {conclusionPart1.map((p) => <p>{p}</p>)}
+          {/* Row 1: img[1] (1:1, 2-col, offset) + The moment (2-col) */}
+          {data.images[1] && (
+            <div class="csb2-img1">
+              {isVideo(data.images[1].src) ? (
+                <video autoplay loop muted playsinline style="width:100%;display:block;">
+                  <source src={data.images[1].src.replace(/\.(webm|mp4)$/, '.mp4')} type="video/mp4" />
+                  <source src={data.images[1].src.replace(/\.(webm|mp4)$/, '.webm')} type="video/webm" />
+                </video>
+              ) : (
+                <img src={data.images[1].src} alt={data.images[1].alt} loading="lazy" />
+              )}
             </div>
+          )}
+          <div class="csb2-moment">
+            <span class="csb2-label">The moment that tested us</span>
+            {momentParagraphs.map((p) => <p>{p}</p>)}
           </div>
-          <div class="csg-img2">
-            {isVideo(data.images[2].src) ? (
-              <video autoplay loop muted playsinline style="width:100%;display:block;">
-                <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.mp4')} type="video/mp4" />
-                <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.webm')} type="video/webm" />
-              </video>
-            ) : (
-              <img src={data.images[2].src} alt={data.images[2].alt} loading="lazy" />
-            )}
-          </div>
-        </>
-      )}
 
-      <!-- Row 3: [empty][img: 2-3][text: 4-5][empty] -->
-      {data.images[3] && (
+          {/* Row 2: Arc diagram (full width, below The moment) */}
+          {data.arcDiagram && (
+            <div class="csb2-arc">
+              <img src={data.arcDiagram} alt="Project narrative arc" />
+            </div>
+          )}
+
+          {/* Row 3: What I carry forward (2-col) + img[2] video/3:4 (4-col) */}
+          <div class="csb2-forward">
+            <span class="csb2-label">What I carry forward</span>
+            {forwardParagraphs.map((p) => <p>{p}</p>)}
+          </div>
+          {data.images[2] && (
+            <div class="csb2-img2">
+              {isVideo(data.images[2].src) ? (
+                <video autoplay loop muted playsinline style="width:100%;display:block;">
+                  <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.mp4')} type="video/mp4" />
+                  <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.webm')} type="video/webm" />
+                </video>
+              ) : (
+                <img src={data.images[2].src} alt={data.images[2].alt} loading="lazy" />
+              )}
+            </div>
+          )}
+        </>
+      ) : (
         <>
-          <div class="csg-img3">
-            <img src={data.images[3].src} alt={data.images[3].alt} loading="lazy" />
-          </div>
-          <div class="csg-text3">
-            {conclusionPart2.map((p) => <p>{p}</p>)}
-          </div>
+          {/* ── v1 layout ── */}
+
+          {/* Row 1: [img: 2-3][text: 4-5] */}
+          {data.images[1] && (
+            <>
+              <div class="csg-img1">
+                {slug === 'square-industry' ? (
+                  <div class="industry-words">
+                    {[
+                      { label: 'Bakeries',            href: 'https://squareup.com/us/en/restaurants/bakery' },
+                      { label: 'Bars & Breweries',    href: 'https://squareup.com/us/en/restaurants/bars',          myWork: true },
+                      { label: 'Catering',            href: 'https://squareup.com/us/en/restaurants/caterers' },
+                      { label: 'Coffee Shops',        href: 'https://squareup.com/us/en/restaurants/coffee-shop' },
+                      { label: 'Food Trucks',         href: 'https://squareup.com/us/en/restaurants/food-truck',    myWork: true },
+                      { label: 'Full Service',        href: 'https://squareup.com/us/en/restaurants/full-service',  myWork: true },
+                      { label: 'Quick Service',       href: 'https://squareup.com/us/en/restaurants/quick-service', myWork: true },
+                      { label: 'All Food & Beverage', href: 'https://squareup.com/us/en/restaurants' },
+                    ].map((item) => (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener"
+                        class="industry-word"
+                      >
+                        {item.label}{item.myWork && <span class="industry-my-work">* (My work!)</span>}
+                      </a>
+                    ))}
+                  </div>
+                ) : isVideo(data.images[1].src) ? (
+                  <video autoplay loop muted playsinline style="width:100%;display:block;">
+                    <source src={data.images[1].src.replace(/\.(webm|mp4)$/, '.mp4')} type="video/mp4" />
+                    <source src={data.images[1].src.replace(/\.(webm|mp4)$/, '.webm')} type="video/webm" />
+                  </video>
+                ) : (
+                  <img src={data.images[1].src} alt={data.images[1].alt} loading="lazy" />
+                )}
+              </div>
+              <div class="csg-text1">
+                {data.bulletPoints && data.bulletPoints.map((point) => <p>{point}</p>)}
+              </div>
+            </>
+          )}
+
+          {/* Row 2: [text: 1-2][img: 3-6] */}
+          {data.images[2] && (
+            <>
+              <div class="csg-text2">
+                <div class="cs-conclusion">
+                  {conclusionPart1.map((p) => <p>{p}</p>)}
+                </div>
+              </div>
+              <div class="csg-img2">
+                {isVideo(data.images[2].src) ? (
+                  <video autoplay loop muted playsinline style="width:100%;display:block;">
+                    <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.mp4')} type="video/mp4" />
+                    <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.webm')} type="video/webm" />
+                  </video>
+                ) : (
+                  <img src={data.images[2].src} alt={data.images[2].alt} loading="lazy" />
+                )}
+              </div>
+            </>
+          )}
+
+          {/* Row 3: [img: 2-3][text: 4-5] */}
+          {data.images[3] && (
+            <>
+              <div class="csg-img3">
+                <img src={data.images[3].src} alt={data.images[3].alt} loading="lazy" />
+              </div>
+              <div class="csg-text3">
+                {conclusionPart2.map((p) => <p>{p}</p>)}
+              </div>
+            </>
+          )}
         </>
       )}
 
-      <!-- Quote: [empty][cols 2-5] -->
+      {/* ── Shared: testimonial + live URL ── */}
       {data.testimonial && (
         <div class="csg-quote">
           <blockquote>
@@ -167,7 +242,6 @@ function isVideo(src: string) {
         </div>
       )}
 
-      <!-- Live URL: [empty][cols 2-3] -->
       {data.liveUrl && (
         <div class:list={['csg-url', { 'csg-url--no-quote': !data.testimonial }]}>
           <a href={data.liveUrl} target="_blank" rel="noopener" class="cs-live-link">

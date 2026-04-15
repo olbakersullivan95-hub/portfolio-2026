@@ -1,41 +1,52 @@
 ---
 title: VPOS Pages
-subtitle: The Pages Behind the Numbers
+subtitle: Conversion Pages Built to Perform
 employer: Block / Square
 period: "2024"
-tags: ["Conversion Optimization", "Animation", "Localization", "A/B Testing", "Web"]
-categories: ["UX", "Product", "Animation"]
+tags: ["Conversion", "Animation", "Localisation", "A/B Testing", "Web Production"]
+categories: ["UX", "Product"]
 coverImage: /images/projects/block-2/img-1.webp
 images:
   - src: /images/projects/block-2/img-1.webp
-    alt: VPOS pages
+    alt: VPOS Pages
   - src: /images/projects/block-2/img-2.gif
-    alt: VPOS pages, process
+    alt: VPOS, animation
   - src: /images/projects/block-2/img-3.mp4
-    alt: VPOS pages, detail
+    alt: VPOS, product demo
 stats:
   - value: "+33%"
     label: Bottom-of-Funnel Conversion
   - value: "500M+"
-    label: Annualized Incremental NVA
-  - value: "Global"
-    label: Multi-locale Launch
+    label: Addressable Market
+  - value: "4"
+    label: Locales Launched
 opener: "Four pages and one month and the restructuring of things that had stood long enough to forget why they stood and the work went on through the small hours and the deadline did not move and neither did we and at the last it was done and the evening came down red in the west."
 order: 2
-intro: |
-  VPOS (Virtual Point of Sale) pages were among Square's highest-stakes public web properties, product pages directly tied to merchant acquisition and bottom-of-funnel conversion. These pages needed to work across multiple locales, devices, and use cases, with tight coordination between design, engineering, and product marketing.
+skills:
+  - "Conversion optimisation"
+  - "Animation design & implementation"
+  - "Localisation (FR, JP + markets)"
+  - "A/B testing"
+  - "Web production & QA"
+metaRow:
+  role: "Production Designer"
+  team: "design + engineering"
+  scope: "multi-locale, A/B tested"
+problem: |
+  VPOS pages were among Square's highest-stakes public web properties — not editorial pages, but conversion pages, the ones where a merchant weighing their options would land, read, and either sign up or leave. Everything needed to work flawlessly: across multiple locales, across every device breakpoint, with no gap between what design intended and what engineering shipped.
 
-  My contribution spanned the full production lifecycle: from slicing and building assets to leading QA rounds, supporting A/B test setup, and ensuring localized variants were accurate and launch-ready.
-bulletHeading: What I Did
-bulletPoints:
-  - "VPOS (Virtual Point of Sale) pages were among Square's highest-stakes public web properties, product pages directly tied to merchant acquisition and bottom-of-funnel conversion. These weren't editorial pages. They were the pages where real decisions happened, where a merchant weighing their options would land, read, and either convert or leave. Everything needed to work flawlessly across multiple locales, devices, and use cases, with no room for misalignment between what design intended and what engineering shipped."
-conclusionHeading: The Systems Thinking
-conclusion: |
-  The contribution spanned the full production lifecycle: building and slicing production-ready assets across desktop and mobile breakpoints, designing and implementing original hero animations that shipped to the live page, and supporting A/B testing setup, including experiment link creation and variant QA. When the lead production designer was out of office, there was no waiting for a handoff plan. The QA rounds ran, the issues got flagged, the timeline held.
+  When the lead production designer was out of office mid-project, there was no waiting for a handoff. The QA rounds ran, the issues got flagged, and the timeline held.
+theMoment: |
+  How to demo the product turned out to be a more interesting question than it first appeared. Block has tried different demo formats over the years — interactive trials, live sales demos, free trial offers — and each carries a different theory about what converts a hesitant merchant into a confident one.
 
-  Localization added another layer entirely. Ensuring design integrity across multiple markets isn't just a translation exercise, it's a design exercise. Every layout decision that worked in English had to hold in French, Japanese, and beyond, across characters of different lengths and reading rhythms. That process ran market by market, making sure what shipped globally reflected what was designed locally.
+  The team landed on controlled animation organically, through a shared read of what the other formats had and hadn't done. Animation, done with care, does something the others can't: it shows the product behaving exactly as intended, at the exact moment of consideration, with no friction and no risk of the experience breaking. The concern about it feeling "too polished" shaped how it was designed — not a cinematic flythrough, but a precise, functional demonstration of the product doing its job. That distinction mattered, and it's the difference between marketing and evidence.
 
-  A +33% bottom-of-funnel conversion lift doesn't happen by accident. It happens when every element of a page, the animation, the copy, the localized variants, the QA, is executed with enough precision that design intent and live reality are the same thing.
+  Localisation ran alongside all of it. Ensuring design integrity across French, Japanese, and additional markets isn't a translation exercise so much as a design one — every layout decision that worked in English had to hold across languages with different lengths, characters, and reading rhythms.
+arcDiagram: /images/arcs/vpos.svg
+whatICarryForward: |
+  Animation is a conversion decision, not a design decoration. The craft questions — how something moves, how long it takes, what it shows and what it withholds — are inseparable from the conversion questions, and treating them that way changes how you approach both.
+
+  This project also sharpened my read of when controlled presentation outperforms interactive experience. On a conversion page, too much openness introduces too much noise, and precision tends to serve trust better when the stakes are high and the moment is short.
 testimonial:
   quote: "Olivia went above and beyond helping the teams cross the finish line for two big projects while I was away. Her enthusiasm and diligent work is unparalleled."
   attribution: "Sasha Hernandez, Block"

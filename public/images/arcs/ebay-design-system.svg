@@ -1,0 +1,34 @@
+<svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+
+  <!-- Baseline -->
+  <line x1="40" y1="130" x2="668" y2="130" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.2"/>
+
+  <!-- Curve: gradual organic rise over many sprint cycles, small periodic dips, overall upward -->
+  <path d="M 40,108 C 65,105 85,98 110,95 C 125,93 130,98 148,96 C 165,94 185,88 210,86 C 225,85 232,90 248,88 C 265,86 285,78 310,76 C 330,75 340,80 358,78 C 378,76 400,68 428,64 C 448,62 458,66 475,64 C 492,62 515,55 545,50 C 570,46 620,40 668,36"
+        stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Key dots -->
+  <circle cx="358" cy="78" r="2.5" fill="#1a1a1a"/>
+  <circle cx="475" cy="64" r="2.5" fill="#1a1a1a"/>
+  <circle cx="668" cy="36" r="3" fill="#1a1a1a"/>
+
+  <!-- Annotation: repetition fatigue dip -->
+  <line x1="358" y1="81" x2="358" y2="96" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
+  <text x="358" y="107" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Same templates, new briefs.</text>
+
+  <!-- Annotation: system finds its range -->
+  <line x1="475" y1="61" x2="475" y2="47" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
+  <text x="475" y="41" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">The system found its range.</text>
+
+  <!-- Annotation: end -->
+  <text x="660" y="28" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">4 years later, still in use.</text>
+
+  <!-- Phase labels -->
+  <text x="40"  y="145" text-anchor="start" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Early sprints</text>
+  <text x="358" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Library takes shape</text>
+  <text x="668" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Stabilised</text>
+
+  <!-- Y caption -->
+  <text x="40" y="162" font-family="system-ui, -apple-system, sans-serif" font-size="7.5" fill="#999" letter-spacing="0.08em">SYSTEM QUALITY →</text>
+
+</svg>

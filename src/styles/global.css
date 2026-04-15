@@ -246,6 +246,100 @@ img { display: block; width: 100%; }
   padding: 3rem var(--margin) 5rem;
 }
 
+/* ── Skills 3-up grid (v2, in Section 1) ── */
+.cs-skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem 1rem;
+  list-style: none;
+  margin-bottom: 1.75rem;
+}
+.cs-skills li {
+  font-size: var(--text-xs);
+  line-height: 1.4;
+  padding-left: 1.3em;
+  position: relative;
+}
+.cs-skills li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  width: 0.85em;
+  height: 0.85em;
+  background-image: url('/bullet.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* ── V2 body grid cell assignments ── */
+/* Row 1: [gap] img[1] 2-col [gap] moment 2-col [gap] — mirrors v1 Row 1 offset */
+.csb2-meta    { grid-column: 1 / 7; }
+.csb2-img1    { grid-column: 2 / 4; }
+.csb2-moment  { grid-column: 4 / 6; }
+/* Row 2: arc full width */
+.csb2-arc     { grid-column: 1 / 7; }
+/* Row 3: forward 2-col + video/3:4 img 4-col — mirrors v1 Row 2 */
+.csb2-forward { grid-column: 1 / 3; }
+.csb2-img2    { grid-column: 3 / 7; }
+/* Skills summary below carry forward */
+.csb2-skills  { grid-column: 1 / 3; }
+.csb2-skills-inline { margin-top: 1.5rem; }
+/* Row 4 (optional 4th image) */
+.csb2-img3    { grid-column: 2 / 4; }
+
+/* Meta row strip (sits below employer/period, columns align with stats) */
+.cs-meta-row {
+  display: flex;
+  gap: var(--gutter);
+  margin-top: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+.cs-meta-row span {
+  flex: 1;
+  font-size: var(--text-xs);
+  color: var(--ink-mid);
+  display: block;
+}
+.cs-meta-row strong {
+  color: var(--ink);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.1em;
+}
+
+/* V2 section label (above each text block, no divider line) */
+.csb2-label {
+  display: block;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-mid);
+  margin-bottom: 1.1rem;
+}
+
+/* Problem text in Section 1 (80px top padding to breathe below tags) */
+.cs-problem {
+  padding-top: 80px;
+  font-size: var(--text-body);
+  line-height: 1.7;
+}
+.cs-problem p + p { margin-top: 0.85em; }
+
+/* V2 text containers */
+.csb2-moment p,
+.csb2-forward p {
+  font-size: var(--text-body);
+  line-height: 1.7;
+}
+.csb2-moment p + p,
+.csb2-forward p + p { margin-top: 0.85em; }
+
+/* Arc diagram */
+.csb2-arc img { width: 100%; display: block; }
+.csb2-img1 img, .csb2-img2 img, .csb2-img3 img { width: 100%; display: block; }
+.csb2-img1 video, .csb2-img2 video, .csb2-img3 video { width: 100%; display: block; }
+
 /* ── Asymmetric narrative grid ── */
 .cs-body-grid {
   display: grid;
@@ -844,6 +938,15 @@ img { display: block; width: 100%; }
   .csg-img3, .csg-text3,
   .csg-quote,
   .csg-url, .csg-url--no-quote { grid-column: 1; }
+
+  .csb2-meta,
+  .csb2-img1, .csb2-moment,
+  .csb2-arc,
+  .csb2-forward, .csb2-img2,
+  .csb2-skills, .csb2-img3 { grid-column: 1; }
+
+  .cs-meta-row { gap: 1rem; }
+  .cs-problem { padding-top: 40px; }
 
   .cs-title   { font-size: 2rem; }
   .stat-value { font-size: 1.35rem; }

@@ -1,0 +1,38 @@
+<svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+
+  <!-- Baseline -->
+  <line x1="40" y1="130" x2="668" y2="130" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.2"/>
+
+  <!-- Curve: short project arc rises gently to launch, then dashed extension for 6 years -->
+  <!-- Solid portion: project -->
+  <path d="M 40,100 C 65,98 100,90 130,84 C 155,79 175,76 200,72 C 220,69 235,68 255,66"
+        stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Launch dot -->
+  <circle cx="255" cy="66" r="3" fill="#1a1a1a"/>
+
+  <!-- Dashed extension: 6 years running -->
+  <path d="M 265,65 C 300,63 350,61 400,60 C 450,59 500,58 550,57 C 590,56 630,55 668,54"
+        stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-dasharray="6,5" stroke-linecap="round"/>
+
+  <!-- End dot (dashed) -->
+  <circle cx="668" cy="54" r="2.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Annotation: launch -->
+  <line x1="255" y1="63" x2="255" y2="48" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
+  <text x="255" y="42" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Launch.</text>
+
+  <!-- Annotation: end of dashed -->
+  <text x="660" y="46" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Stylesheet unchanged. Still in active use.</text>
+
+  <!-- Phase labels -->
+  <text x="40"  y="145" text-anchor="start" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Brief</text>
+  <text x="150" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Weekly check-ins</text>
+  <text x="255" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Launch</text>
+  <text x="460" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Year 3</text>
+  <text x="668" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Year 6</text>
+
+  <!-- Y caption -->
+  <text x="40" y="162" font-family="system-ui, -apple-system, sans-serif" font-size="7.5" fill="#999" letter-spacing="0.08em">LONGEVITY →</text>
+
+</svg>

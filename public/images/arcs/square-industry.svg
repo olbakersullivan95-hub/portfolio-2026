@@ -1,0 +1,34 @@
+<svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+
+  <!-- Baseline -->
+  <line x1="40" y1="130" x2="668" y2="130" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.2"/>
+
+  <!-- Curve: starts uncertain/low, rises, dips at nav decision, recovers to results -->
+  <path d="M 40,118 C 70,115 110,100 150,92 C 185,85 220,78 260,75 C 295,72 320,80 350,88 C 375,94 390,96 415,90 C 445,82 490,58 540,42 C 580,30 625,26 668,22"
+        stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Key dots -->
+  <circle cx="350" cy="88" r="3" fill="#1a1a1a"/>
+  <circle cx="415" cy="90" r="2.5" fill="#1a1a1a"/>
+  <circle cx="668" cy="22" r="3" fill="#1a1a1a"/>
+
+  <!-- Annotation: dip / nav decision -->
+  <line x1="350" y1="91" x2="350" y2="106" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
+  <text x="350" y="116" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Front door or dead end?</text>
+
+  <!-- Annotation: recovery -->
+  <line x1="415" y1="87" x2="415" y2="72" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
+  <text x="415" y="66" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Nav structure resolved it.</text>
+
+  <!-- Annotation: results -->
+  <text x="660" y="14" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">10x pageviews. 230x signups.</text>
+
+  <!-- Phase labels -->
+  <text x="40"  y="145" text-anchor="start" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Discovery</text>
+  <text x="260" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Production</text>
+  <text x="668" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Launch</text>
+
+  <!-- Y caption -->
+  <text x="40" y="162" font-family="system-ui, -apple-system, sans-serif" font-size="7.5" fill="#999" letter-spacing="0.08em">TEAM CONFIDENCE →</text>
+
+</svg>

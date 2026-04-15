@@ -22,17 +22,28 @@ stats:
     label: on pages.ebay.com
 opener: "The summit does not reveal itself until you are standing upon it and looking back at the whole terrible distance of the climb and only then do you see that the modules hold and the thing is finished and it was the continual looking from the peak that made it so."
 order: 6
-intro: |
-  Small Business Saturday is a high-visibility moment for eBay, an opportunity to spotlight the independent sellers who make the platform what it is. For this landing page, the challenge was featuring multiple individual sellers, each with their own story and accompanying video, on a single cohesive page that felt celebratory without becoming chaotic.
+skills:
+  - "Landing page UX"
+  - "Content hierarchy & restructure"
+  - "Client wireframe critique"
+  - "Product design"
+  - "Internal stakeholder alignment"
+metaRow:
+  role: "Digital/UX Designer"
+  team: "design + copy team"
+  scope: "1 landing page, live on eBay"
+problem: |
+  Small Business Saturday is one of eBay's highest-visibility campaign moments. The ask was deceptively contained: one landing page, multiple sellers, each with their own story and video. A client wireframe came with the brief, and it had captured all the required content — but it hadn't solved the design problem. Too much was competing for the same level of attention, redundant elements were flattening the hierarchy, and the page hadn't resolved its core tension: how do you give each seller a genuine spotlight without the page reading as a ranked list?
+theMoment: |
+  The first decision was not to open a design tool. Before anything was built, the wireframe got a thorough read to identify what wasn't working and why — the diagnosis was redundancy, too much content competing for the same level of attention with no clear signal to the reader about what mattered most.
 
-  We started with a client-provided wireframe. As is often the case, the wireframe captured the required content but hadn't fully solved the design problem, there was redundancy, unclear hierarchy, and an uneasy balance between giving each seller their own spotlight and keeping the page readable as a whole.
-bulletHeading: What I Did
-bulletPoints:
-  - "The ask was deceptively contained: one landing page, multiple sellers, each with their own story and video, for one of eBay's highest-visibility campaign moments of the year. A client wireframe came with it. The wireframe captured the required content but hadn't fully solved the design problem, there was redundancy, unclear hierarchy, and an uneasy balance between giving each seller their own spotlight and keeping the page readable as a whole."
-conclusionHeading: The Design Thinking
-conclusion: |
-  Before opening a design tool, the wireframe got a thorough read to identify what wasn't working and why. The content flow was restructured with the team, deciding what to lead with, what to subordinate, where to create breathing room, and how to integrate per-seller video in a way that felt native rather than bolted on. The goal was that someone arriving during a busy Saturday of shopping would leave feeling like they'd actually met these sellers, not just scrolled past a list of businesses.
+  The team aligned on the restructure internally before bringing anything to the client. That sequence mattered. Presenting a unified direction — with the rationale already stress-tested — meant the conversation with the client was about refinement rather than negotiation.
 
-  Landing pages are deceptively hard precisely because the work is making complexity feel simple. Here, the complexity was human: multiple real people, each deserving genuine representation, all sharing the same canvas. The solution was treating hierarchy as hospitality, every structural decision was in service of the reader moving through the page. It went live on eBay.com for the Small Business Saturday campaign.
+  The goal was specific: someone arriving during a busy Saturday of shopping would leave feeling like they'd actually met these sellers, not just scrolled past a list of businesses. That meant treating hierarchy as hospitality, with every structural decision in service of the reader moving through the page at their own pace, each seller given the space to land.
+arcDiagram: /images/arcs/small-business-saturday.svg
+whatICarryForward: |
+  Reading the brief before opening a tool sounds obvious, but the instinct to start designing is strong, especially under sprint pressure — and the most valuable work on this project happened before anything was built.
+
+  Presenting a unified internal direction also changes the nature of the client conversation from debate to refinement, which is a better use of everyone's time and tends to produce better work. The page went live on eBay.com for the Small Business Saturday campaign.
 liveUrl: "https://www.ebay.ca/sellercentre/ebay-for-business/ebay-for-small-business"
 ---

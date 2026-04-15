@@ -1,0 +1,34 @@
+<svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+
+  <!-- Baseline -->
+  <line x1="40" y1="130" x2="668" y2="130" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.2"/>
+
+  <!-- Curve: short deliberate arc, no crisis — starts low, rises steadily, clean finish -->
+  <path d="M 40,112 C 80,110 130,105 180,98 C 220,92 255,90 295,82 C 335,74 375,64 420,54 C 460,46 530,38 590,32 C 620,29 645,27 668,25"
+        stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Key dots -->
+  <circle cx="180" cy="98" r="2.5" fill="#1a1a1a"/>
+  <circle cx="295" cy="82" r="2.5" fill="#1a1a1a"/>
+  <circle cx="668" cy="25" r="3" fill="#1a1a1a"/>
+
+  <!-- Annotation: wireframe read -->
+  <line x1="180" y1="95" x2="180" y2="80" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
+  <text x="180" y="74" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Read first. Designed second.</text>
+
+  <!-- Annotation: internal alignment -->
+  <line x1="295" y1="85" x2="295" y2="100" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
+  <text x="295" y="112" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Aligned internally before the client.</text>
+
+  <!-- Annotation: live -->
+  <text x="660" y="17" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Live on eBay.com.</text>
+
+  <!-- Phase labels -->
+  <text x="40"  y="145" text-anchor="start" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Wireframe received</text>
+  <text x="420" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Design</text>
+  <text x="668" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Live</text>
+
+  <!-- Y caption -->
+  <text x="40" y="162" font-family="system-ui, -apple-system, sans-serif" font-size="7.5" fill="#999" letter-spacing="0.08em">DESIGN CLARITY →</text>
+
+</svg>

@@ -1,0 +1,31 @@
+<svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+
+  <!-- Baseline -->
+  <line x1="40" y1="130" x2="668" y2="130" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.2"/>
+
+  <!-- Curve: fast-moving baseline with two distinct spikes -->
+  <path d="M 40,95 C 65,94 90,96 115,95 C 135,94 148,96 165,95 C 182,94 195,96 208,68 C 215,52 222,48 230,52 C 238,58 248,90 265,93 C 282,96 300,95 318,94 C 340,93 360,95 378,94 C 395,93 412,95 430,55 C 438,38 446,34 454,38 C 462,44 470,86 488,92 C 505,96 530,95 560,94 C 590,93 630,94 668,93"
+        stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Key dots at peaks -->
+  <circle cx="222" cy="48" r="3" fill="#1a1a1a"/>
+  <circle cx="446" cy="34" r="3" fill="#1a1a1a"/>
+
+  <!-- Annotation: DJ Skee spike -->
+  <line x1="222" y1="45" x2="222" y2="30" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
+  <text x="222" y="24" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Raised the format question. It worked.</text>
+
+  <!-- Annotation: Oreo spike -->
+  <line x1="446" y1="31" x2="446" y2="16" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
+  <text x="446" y="11" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">3 days from flag to live.</text>
+
+  <!-- Phase labels -->
+  <text x="40"  y="145" text-anchor="start" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Sprint cadence</text>
+  <text x="222" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">DJ Skee</text>
+  <text x="446" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Oreo drop</text>
+  <text x="668" y="145" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Next sprint</text>
+
+  <!-- Y caption -->
+  <text x="40" y="162" font-family="system-ui, -apple-system, sans-serif" font-size="7.5" fill="#999" letter-spacing="0.08em">CULTURAL IMPACT →</text>
+
+</svg>

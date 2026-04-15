@@ -14,12 +14,24 @@ const projects = defineCollection({
     stats: z.array(z.object({ value: z.string(), label: z.string() })).optional(),
     opener: z.string().optional(),
     order: z.number(),
-    // Structured content — each section aligns with its corresponding image
-    intro: z.string(),                    // aligns with images[0]
-    bulletHeading: z.string(),            // heading for the "What I Did" section
-    bulletPoints: z.array(z.string()),    // aligns with images[1]
-    conclusionHeading: z.string(),        // heading for the closing section
-    conclusion: z.string(),              // aligns with images[2]
+    // ── v1 content fields (legacy, optional) ──
+    intro: z.string().optional(),
+    bulletHeading: z.string().optional(),
+    bulletPoints: z.array(z.string()).optional(),
+    conclusionHeading: z.string().optional(),
+    conclusion: z.string().optional(),
+    // ── v2 content fields (new narrative structure) ──
+    skills: z.array(z.string()).optional(),
+    metaRow: z.object({
+      role: z.string(),
+      team: z.string(),
+      scope: z.string(),
+    }).optional(),
+    problem: z.string().optional(),
+    theMoment: z.string().optional(),
+    whatICarryForward: z.string().optional(),
+    arcDiagram: z.string().optional(),
+    // ── shared ──
     testimonial: z.object({
       quote: z.string(),
       attribution: z.string(),
