@@ -625,7 +625,7 @@ img { display: block; width: 100%; }
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto auto;
   column-gap: var(--gutter);
-  row-gap: 3rem;
+  row-gap: 0;
   padding: 0 var(--margin) 4rem;
   align-items: start;
 }
@@ -635,6 +635,8 @@ img { display: block; width: 100%; }
   grid-row: 1;
   font-size: var(--text-body);
   line-height: 1.7;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .about p + p { margin-top: 1em; }
