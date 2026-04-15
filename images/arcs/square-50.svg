@@ -1,0 +1,36 @@
+<svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+
+  <!-- Baseline -->
+  <line x1="40" y1="130" x2="668" y2="130" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.2"/>
+
+  <!-- Staircase curve: gentle rises with a dip at handoff failure -->
+  <path d="M 40,105 C 65,105 125,78 150,78 C 175,78 215,97 240,97 C 265,97 305,62 330,62 C 355,62 422,50 448,50 C 472,50 540,40 564,40 C 588,40 645,28 668,28"
+        stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Key dots -->
+  <circle cx="240" cy="97" r="2.5" fill="#1a1a1a"/>
+  <circle cx="330" cy="62" r="2.5" fill="#1a1a1a"/>
+  <circle cx="668" cy="28" r="3" fill="#1a1a1a"/>
+
+  <!-- Annotation: dip (handoff failure) -->
+  <line x1="240" y1="100" x2="240" y2="112" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
+  <text x="240" y="122" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">The gap wasn't visible yet.</text>
+
+  <!-- Annotation: bridge built (recovery) -->
+  <line x1="330" y1="59" x2="330" y2="47" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
+  <text x="330" y="42" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Closed the loop.</text>
+
+  <!-- Annotation: launch peak -->
+  <text x="660" y="18" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Most relaxed launch they'd ever had.</text>
+
+  <!-- Phase labels along baseline -->
+  <text x="40"  y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Scoping</text>
+  <text x="150" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Taxi onboarded</text>
+  <text x="448" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Phase 2</text>
+  <text x="564" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Phase 3</text>
+  <text x="668" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Launch</text>
+
+  <!-- Y-axis caption -->
+  <text x="40" y="162" font-family="system-ui, -apple-system, sans-serif" font-size="7.5" fill="#999" letter-spacing="0.08em">TEAM COHERENCE →</text>
+
+</svg>
