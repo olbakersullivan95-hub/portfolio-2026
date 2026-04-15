@@ -14,11 +14,11 @@
 
   <!-- Annotation: wireframe read -->
   <line x1="180" y1="95" x2="180" y2="80" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
-  <text x="180" y="74" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Read first. Designed second.</text>
+  <text x="180" y="74" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">The wireframe had the content, not the solution.</text>
 
   <!-- Annotation: internal alignment -->
   <line x1="295" y1="85" x2="295" y2="100" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
-  <text x="295" y="112" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Aligned internally before the client.</text>
+  <text x="295" y="112" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">One direction, stress-tested before the client saw it.</text>
 
   <!-- Annotation: live -->
   <text x="660" y="17" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Live on eBay.com.</text>

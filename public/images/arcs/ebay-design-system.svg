@@ -14,11 +14,11 @@
 
   <!-- Annotation: repetition fatigue dip -->
   <line x1="358" y1="81" x2="358" y2="96" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
-  <text x="358" y="107" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Same templates, new briefs.</text>
+  <text x="358" y="107" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">The same structural bones, brief after brief.</text>
 
   <!-- Annotation: system finds its range -->
   <line x1="475" y1="61" x2="475" y2="47" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
-  <text x="475" y="41" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">The system found its range.</text>
+  <text x="475" y="41" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Craft decisions at the margins.</text>
 
   <!-- Annotation: end -->
   <text x="660" y="28" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">4 years later, still in use.</text>

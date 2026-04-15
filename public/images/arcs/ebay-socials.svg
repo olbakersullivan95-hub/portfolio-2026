@@ -13,7 +13,7 @@
 
   <!-- Annotation: DJ Skee spike -->
   <line x1="222" y1="45" x2="222" y2="30" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
-  <text x="222" y="24" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Raised the format question. It worked.</text>
+  <text x="222" y="24" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">The case for animation, made at kickoff.</text>
 
   <!-- Annotation: Oreo spike -->
   <line x1="446" y1="31" x2="446" y2="16" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>

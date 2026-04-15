@@ -21,7 +21,7 @@
   <text x="330" y="42" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Closed the loop.</text>
 
   <!-- Annotation: launch peak -->
-  <text x="660" y="18" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Most relaxed launch they'd ever had.</text>
+  <text x="660" y="18" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Project wrapped up early.</text>
 
   <!-- Phase labels along baseline -->
   <text x="40"  y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Scoping</text>

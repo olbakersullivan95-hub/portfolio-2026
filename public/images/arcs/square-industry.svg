@@ -18,7 +18,8 @@
 
   <!-- Annotation: recovery -->
   <line x1="415" y1="87" x2="415" y2="72" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
-  <text x="415" y="66" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Nav structure resolved it.</text>
+  <text x="410" y="62" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">The decision that resolved</text>
+  <text x="410" y="73" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">the front-door problem.</text>
 
   <!-- Annotation: results -->
   <text x="660" y="14" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">10x pageviews. 230x signups.</text>
