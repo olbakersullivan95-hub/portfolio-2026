@@ -1,0 +1,35 @@
+<svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+
+  <!-- Baseline -->
+  <line x1="40" y1="130" x2="668" y2="130" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.2"/>
+
+  <!-- Curve: steady ambitious rise to presentation peak, then a calm, honest plateau -->
+  <path d="M 40,108 C 75,105 120,95 165,82 C 200,72 240,62 285,50 C 320,41 355,34 390,30 C 410,28 430,30 455,32 C 480,34 530,36 580,36 C 615,36 645,37 668,37"
+        stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Key dots -->
+  <circle cx="285" cy="50" r="2.5" fill="#1a1a1a"/>
+  <circle cx="390" cy="30" r="3" fill="#1a1a1a"/>
+  <circle cx="580" cy="36" r="2.5" fill="#1a1a1a"/>
+
+  <!-- Annotation: design decision -->
+  <line x1="285" y1="47" x2="285" y2="32" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
+  <text x="285" y="26" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Kept only the brand colours.</text>
+
+  <!-- Annotation: TTC presentation -->
+  <line x1="390" y1="27" x2="390" y2="13" stroke="#1a1a1a" stroke-width="0.5" stroke-opacity="0.35"/>
+  <text x="390" y="8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Presented to the TTC. They were enthusiastic.</text>
+
+  <!-- Annotation: outcome -->
+  <text x="660" y="28" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#888">Budget, not design. The right call.</text>
+
+  <!-- Phase labels -->
+  <text x="40"  y="145" text-anchor="start" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Research</text>
+  <text x="285" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Design sprint</text>
+  <text x="390" y="145" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Prototype delivered</text>
+  <text x="668" y="145" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#777">Outcome</text>
+
+  <!-- Y caption -->
+  <text x="40" y="162" font-family="system-ui, -apple-system, sans-serif" font-size="7.5" fill="#999" letter-spacing="0.08em">DESIGN CONFIDENCE →</text>
+
+</svg>
