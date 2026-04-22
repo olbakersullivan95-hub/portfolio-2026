@@ -943,9 +943,10 @@ img { display: block; width: 100%; }
 
   .csb2-meta,
   .csb2-img1, .csb2-moment,
-  .csb2-arc,
   .csb2-forward, .csb2-img2,
   .csb2-skills, .csb2-img3 { grid-column: 1; }
+
+  .csb2-arc { display: none; }
 
   .cs-meta-row { gap: 1rem; }
   .cs-problem { padding-top: 40px; }
