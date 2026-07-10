@@ -6,7 +6,12 @@ const projects = (await getCollection('projects'))
   .filter((p) => p.slug !== 'everbloom')
   .sort((a, b) => a.data.order - b.data.order);
 
+const labelBySlug: Record<string, string> = {
+  'fanatics': 'fanatics-nba-finals',
+};
+
 const companyBySlug: Record<string, string> = {
+  'fanatics': 'Fanatics',
   'square-industry': 'Block',
   'vpos': 'Block',
   'x2c': 'Block',
@@ -42,7 +47,7 @@ const companyBySlug: Record<string, string> = {
           decoding="async"
         />
         <span class="grid__item-company">/{companyBySlug[project.slug] ?? ''}</span>
-        <span class="grid__item-label">/{project.slug}</span>
+        <span class="grid__item-label">/{labelBySlug[project.slug] ?? project.slug}</span>
       </a>
     ))}
   </div>

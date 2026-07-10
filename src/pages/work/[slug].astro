@@ -120,6 +120,9 @@ function isVideo(src: string) {
               ) : (
                 <img src={data.images[1].src} alt={data.images[1].alt} loading="lazy" />
               )}
+              {data.promptExample && (
+                <p class="cs-prompt-example">{data.promptExample}</p>
+              )}
             </div>
           )}
           <div class="csb2-moment">
@@ -322,6 +325,16 @@ function isVideo(src: string) {
     transition: color 0.15s;
   }
   .cs-skip:hover { color: var(--ink); }
+
+  .cs-prompt-example {
+    margin-top: 1rem;
+    font-size: var(--text-xs);
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    border-left: 2px solid var(--ink-mid);
+    padding-left: 0.75rem;
+  }
 
   /* ── Page content fade-in (only when opener present) ── */
   .cs-page-content {

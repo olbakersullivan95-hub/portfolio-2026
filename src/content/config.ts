@@ -31,6 +31,7 @@ const projects = defineCollection({
     theMoment: z.string().optional(),
     whatICarryForward: z.string().optional(),
     arcDiagram: z.string().optional(),
+    promptExample: z.string().optional(),
     // ── shared ──
     testimonial: z.object({
       quote: z.string(),
