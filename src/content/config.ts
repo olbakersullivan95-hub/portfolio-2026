@@ -38,6 +38,8 @@ const projects = defineCollection({
       attribution: z.string(),
     }).optional(),
     liveUrl: z.string().optional(),
+    liveUrlLabel: z.string().optional(),
+    liveUrlInline: z.boolean().optional(),
   }),
 });
 

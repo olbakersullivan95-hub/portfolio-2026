@@ -1,0 +1,48 @@
+---
+title: AT&T Stadium
+subtitle: Directing a Dual-Brand Stadium App
+employer: "THE·TEAM"
+period: "2026"
+tags: ["Art Direction", "Design Systems", "Wayfinding", "Dual Brand", "Kiosk UX", "Tooling"]
+categories: ["UX", "Brand", "Product"]
+coverImage: /images/projects/att-stadium/cover.webp
+images:
+  - src: /images/projects/att-stadium/img-1.webp
+    alt: AT&T Stadium wayfinding kiosk at sunset, Stadium Grey direction
+  - src: /images/projects/att-stadium/img-2.webp
+    alt: Phone in hand on the kiosk ledge, wayfinding route open
+  - src: /images/projects/att-stadium/img-3.mp4
+    alt: Official Dallas Cowboys App, Stadium tab, live wayfinding demo
+stats:
+  - value: "1st"
+    label: Review approval, full UX + UI
+  - value: "72"
+    label: Screens designed in 1.5 weeks
+  - value: "1M+"
+    label: App downloads (Android)
+opener: "Eighty thousand people need to find a seat they have never sat in before, in a building the size of a small city. Someone has to decide whose voice speaks first, and that decision has to hold for every one of the seventy-two screens that follow it."
+order: 14
+metaRow:
+  role: "UX/UI Lead"
+  team: "THE·TEAM"
+  scope: "UX Architecture, UI System, Tooling"
+problem: |
+  AT&T Stadium welcomes close to 2 million visitors a year, and the Official Dallas Cowboys App, with more than a million downloads on Android alone, is how many of them find their way around. The stadium needed a wayfinding experience for kiosks on the concourse and for the phone in a fan's hand. Built on Mappedin, an indoor mapping platform that powers navigation through the venue.
+
+  The goal was to turn that engine into something fans could use without thinking: find your seat, find what's near it, and carry the route from a kiosk to their phone. The design had to answer to two brands with strong, different identities. The Cowboys bring heritage and a structured, navy-led system. AT&T brings connectivity and a brighter, action-driven palette. The app design called for a harmonization and application of both brands.
+
+  I was brought in through THE·TEAM to lead the UX and UI on a two-month build, delivering a new milestone every two weeks: initial UX direction, full UX layout, initial UI direction, and full UI layout. A second phase followed, supporting the development team at Gen City Labs through build, install and launch.
+theMoment: |
+  The direction needed to belong to AT&T's latest app redesign without repeating it. Same family, its own identity. So the first decision was a division of labor between the brands, and everything else followed from it: Cowboys own structure, Cowboy Blue in the top navigation and category browse backgrounds, the frame you move through. AT&T owns action, buttons, SeatGeek connection moments, amenity callouts, everything you tap to get somewhere. One family mark, the AT&T switchback shape, carries through as a shared identity element. From there the look became Stadium Grey: desaturated and led by photography, so the venue does the visual work and the brand colors are saved for the moments that matter.
+
+  That direction became a short set of rules anyone on the team could design within. Glass only sits over imagery or color, never a flat surface, so an overlay always has something to read through. Gradients in AT&T color are desire paths, they point toward where you're going instead of decorating the screen. One saturated blue primary action per screen, so the next step is never in question. And kiosk scale is its own discipline: screen-safe zones and tap targets sized for a standing fan at arm's length, with kiosk module sets that differ from mobile while staying recognizably the same product. I built a componentized brand system to hold all of it, so the dev team could see at a glance what repeated and build it once. With the system in place, I designed 72 screens in a week and a half.
+
+  A dual-brand system lives or dies on consistency, so I built tooling to enforce it instead of relying on anyone remembering the rules: an auto-frame plugin that frames any selected imagery or shape to spec in one action, and a brand font replacer that updates every element in a file to its correct AT&T Sans or AT&T Aleck Sans weight in one click. For the kiosk especially, I prototyped key flows in Claude to feel them at the pace they'd actually be used, standing, in a crowd, often in a hurry.
+whatICarryForward: |
+  Setting rules early is faster than reviewing taste late. Once the system was clear, every screen had an answer to "does this belong?" before anyone asked. That's why, when the complete UX and UI came together, there was nothing left to say, leadership approved it on first review with no changes, a first for that team. The plugins pushed that further: when the system lives in the tooling, consistency stops depending on anyone's memory, including mine.
+
+  The other lesson is about inheritance. Working inside an existing brand family doesn't mean repeating it. The strongest version of this app takes the parent system's logic and gives it a venue of its own, and that's the posture I bring into any project that has to extend something bigger than itself rather than invent in a vacuum.
+liveUrl: "https://attstadium.com/stadium-info/app/"
+liveUrlLabel: 'See it in action. Download the app and select the "Stadium" button →'
+liveUrlInline: true
+---

@@ -141,14 +141,29 @@ function isVideo(src: string) {
           <div class="csb2-forward">
             <span class="csb2-label">What I carry forward</span>
             {forwardParagraphs.map((p) => <p>{p}</p>)}
+            {data.liveUrl && data.liveUrlInline && (
+              <p>
+                <a href={data.liveUrl} target="_blank" rel="noopener" class="cs-live-link cs-live-link--inline">
+                  {data.liveUrlLabel ?? 'See the work live →'}
+                </a>
+              </p>
+            )}
           </div>
           {data.images[2] && (
             <div class="csb2-img2">
               {isVideo(data.images[2].src) ? (
-                <video autoplay loop muted playsinline style="width:100%;display:block;">
-                  <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.mp4')} type="video/mp4" />
-                  <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.webm')} type="video/webm" />
-                </video>
+                <div class="video-spotlight">
+                  <video class="video-spotlight__video" autoplay loop muted playsinline style="width:100%;display:block;">
+                    <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.mp4')} type="video/mp4" />
+                    <source src={data.images[2].src.replace(/\.(webm|mp4)$/, '.webm')} type="video/webm" />
+                  </video>
+                  <div class="video-spotlight__veil" aria-hidden="true"></div>
+                  <button class="video-spotlight__btn" type="button" data-video-fullscreen-trigger aria-label="Watch fullscreen">
+                    <svg class="video-spotlight__arrow" viewBox="0 0 94 94" fill="none" aria-hidden="true">
+                      <path d="M1.47257 84.6925C-0.484388 86.6408 -0.491424 89.8066 1.45685 91.7635C3.40513 93.7205 6.57095 93.7275 8.5279 91.7793L5.00024 88.2359L1.47257 84.6925ZM5.00024 88.2359L8.5279 91.7793L92.0346 8.64298L88.5069 5.0996L84.9792 1.55622L1.47257 84.6925L5.00024 88.2359ZM93.5069 5.11071C93.513 2.3493 91.2794 0.105749 88.518 0.0996108L43.5181 -0.000404482C40.7567 -0.00654145 38.5131 2.22705 38.507 4.98847C38.5009 7.74989 40.7345 9.99343 43.4959 9.99957L83.4958 10.0885L83.4069 50.0884C83.4007 52.8498 85.6343 55.0933 88.3958 55.0995C91.1572 55.1056 93.4007 52.872 93.4069 50.1106L93.5069 5.11071Z" fill="currentColor"/>
+                    </svg>
+                  </button>
+                </div>
               ) : (
                 <img src={data.images[2].src} alt={data.images[2].alt} loading="lazy" />
               )}
@@ -245,10 +260,10 @@ function isVideo(src: string) {
         </div>
       )}
 
-      {data.liveUrl && (
+      {data.liveUrl && !data.liveUrlInline && (
         <div class:list={['csg-url', { 'csg-url--no-quote': !data.testimonial }]}>
           <a href={data.liveUrl} target="_blank" rel="noopener" class="cs-live-link">
-            See the work live →
+            {data.liveUrlLabel ?? 'See the work live →'}
           </a>
         </div>
       )}
@@ -397,5 +412,17 @@ function isVideo(src: string) {
     const max = track.scrollWidth - track.parentElement!.offsetWidth;
     offset = Math.min(max, offset + getItemWidth());
     track.style.transform = `translateX(-${offset}px)`;
+  });
+
+  // ── Video spotlight: click to go fullscreen ──
+  document.querySelectorAll<HTMLButtonElement>('[data-video-fullscreen-trigger]').forEach((btn) => {
+    const video = btn.previousElementSibling?.previousElementSibling as HTMLVideoElement | null;
+    if (!video) return;
+    btn.addEventListener('click', () => {
+      const anyVideo = video as any;
+      if (video.requestFullscreen) video.requestFullscreen();
+      else if (anyVideo.webkitRequestFullscreen) anyVideo.webkitRequestFullscreen();
+      else if (anyVideo.webkitEnterFullscreen) anyVideo.webkitEnterFullscreen(); // iOS Safari
+    });
   });
 </script>

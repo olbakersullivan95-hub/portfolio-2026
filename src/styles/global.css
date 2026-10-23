@@ -282,6 +282,7 @@ img { display: block; width: 100%; }
 /* Row 3: forward 2-col + video/3:4 img 4-col — mirrors v1 Row 2 */
 .csb2-forward { grid-column: 1 / 3; }
 .csb2-img2    { grid-column: 3 / 7; }
+.csb2-img2:has(video) { grid-column: 3 / 5; }
 /* Skills summary below carry forward */
 .csb2-skills  { grid-column: 1 / 3; }
 .csb2-skills-inline { margin-top: 1.5rem; }
@@ -339,6 +340,55 @@ img { display: block; width: 100%; }
 .csb2-arc img { width: 100%; display: block; }
 .csb2-img1 img, .csb2-img2 img, .csb2-img3 img { width: 100%; display: block; }
 .csb2-img1 video, .csb2-img2 video, .csb2-img3 video { width: 100%; display: block; }
+
+/* Video spotlight: 50% veil with a clear circular window + diagonal-arrow fullscreen trigger */
+.video-spotlight {
+  position: relative;
+  line-height: 0;
+}
+.video-spotlight__video {
+  width: 100%;
+  display: block;
+}
+.video-spotlight__veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0) 0,
+    rgba(0,0,0,0) 57px,
+    rgba(0,0,0,0.5) 58px,
+    rgba(0,0,0,0.5) 100%
+  );
+}
+.video-spotlight__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 114px;
+  height: 114px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.video-spotlight__arrow {
+  width: 47px;
+  height: 47px;
+  color: #000;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.55));
+  transition: transform 0.2s ease;
+}
+.video-spotlight__btn:hover .video-spotlight__arrow,
+.video-spotlight__btn:focus-visible .video-spotlight__arrow {
+  transform: scale(1.12);
+}
 
 /* ── Asymmetric narrative grid ── */
 .cs-body-grid {
@@ -609,6 +659,13 @@ img { display: block; width: 100%; }
 }
 
 .cs-live-link:hover { opacity: 0.6; }
+
+/* Inline variant: reads as a continuation of the paragraph above it, not a separated CTA */
+.cs-live-link--inline {
+  margin-top: 0;
+  display: inline;
+  font-size: inherit;
+}
 
 .cs-testimonial cite {
   font-style: normal;
@@ -944,6 +1001,7 @@ img { display: block; width: 100%; }
   .csb2-meta,
   .csb2-img1, .csb2-moment,
   .csb2-forward, .csb2-img2,
+  .csb2-img2:has(video),
   .csb2-skills, .csb2-img3 { grid-column: 1; }
 
   .csb2-arc { display: none; }
