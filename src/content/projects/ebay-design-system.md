@@ -23,7 +23,7 @@ stats:
   - value: "3+"
     label: "Verticals: Handbags, Watches, Sneakers"
 opener: "A system is not built so much as it accretes, decision on decision and layer on layer like some geologic patient thing, until it holds the weight of everything placed upon it and the work of those who came before is not lost but folded in, and the many combs of it run deep and are still running."
-order: 5
+order: 6
 skills:
   - "Design systems & template architecture"
   - "Responsive email design (320px, images-off)"

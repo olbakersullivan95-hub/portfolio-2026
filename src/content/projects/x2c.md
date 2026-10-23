@@ -21,7 +21,7 @@ stats:
   - value: "1 mo"
     label: Compressed Timeline
 opener: "Seven markets and one month and the mountain did not offer itself to us nor did we ask it to and we moved through it like travelers who have ceased to speak between them, the silence of people who know the journey's end is near and have said what needed saying."
-order: 3
+order: 4
 skills:
   - "Project leadership & co-DRI"
   - "Global launch coordination"

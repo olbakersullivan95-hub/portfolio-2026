@@ -27,7 +27,7 @@ const extraTiles = [
 const NUM_COLS = 6;
 
 const allItems = [
-  ...projects.map(p => ({ src: p.data.coverImage, label: `/${p.slug}`, alt: p.data.title, href: `/work/${p.slug}`, categories: p.data.categories, w: 1536, h: 2048 })),
+  ...projects.map(p => ({ src: p.data.coverImage, label: `/${p.slug}`, alt: p.data.title, href: `/portfolio/${p.slug}`, categories: p.data.categories, w: 1536, h: 2048 })),
   ...extraTiles.map(t => ({ src: t.src, label: t.label, alt: t.alt, href: t.href ?? null, categories: t.categories, w: t.w, h: t.h })),
 ];
 

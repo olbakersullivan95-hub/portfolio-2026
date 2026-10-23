@@ -14,7 +14,7 @@ images:
   - src: /images/projects/everbloom/img-3.webp
     alt: Everbloom Studio, detail
 opener: "Wellness is full of people performing calm and the noon of that expression signals the onset of night but the brief asked for the real thing and I went looking for it past men's knowing and in the going I found it and it was quieter than I expected and more true."
-order: 13
+order: 14
 intro: |
   Everbloom is a yoga and massage studio, a space built around rest, restoration, and physical care. The brief called for a brand package that could hold that softness while still feeling polished and trustworthy enough for a professional wellness business.
 

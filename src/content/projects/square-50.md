@@ -21,7 +21,7 @@ stats:
   - value: "18"
     label: Social Asset Sets
 opener: "Eleven locales routed forth into the work, web and email and socials, and what the canyon takes a thousand years to open by the slow and wanton forces of the earth our team cut in a season and the thing stood after and it stands still."
-order: 4
+order: 5
 skills:
   - "Production team leadership"
   - "Campaign management (3 phases)"

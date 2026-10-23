@@ -21,7 +21,7 @@ stats:
   - value: "4"
     label: Locales Launched
 opener: "Four pages and one month and the restructuring of things that had stood long enough to forget why they stood and the work went on through the small hours and the deadline did not move and neither did we and at the last it was done and the evening came down red in the west."
-order: 2
+order: 3
 skills:
   - "Conversion optimisation"
   - "Animation design & implementation"

@@ -14,7 +14,7 @@ images:
   - src: /images/projects/wheelhouse/img-3.webp
     alt: Wheelhouse Design Build, brand detail
 opener: "He looked at both marks for a long time and then he chose the simpler one and I knew before he spoke that he would and I understood it completely because the best mark is the one that sits in its place without announcing itself and asks nothing of the eye and is already forgotten in the way that necessary things are forgotten."
-order: 11
+order: 12
 intro: |
   Wheelhouse Design Build is an independent carpenter and maker specializing in custom builds. The brief was a logo and brand package that could represent the craft, precision, and personality of a one-person creative practice, something that felt handmade and considered without being precious.
 

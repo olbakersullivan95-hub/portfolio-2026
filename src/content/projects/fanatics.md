@@ -21,7 +21,7 @@ stats:
   - value: "$50M"
     label: Weekend revenue generated
 opener: "Four days looks infinite until someone starts them and then it is no time at all, only a wind moving through a chasm, and the team is swept along inside it and does not stop and does not look back at the week they might have had, the week that leaves in another city by two points on a Tuesday, and there is one game left and then there is none, and the copy is loosed into the wide unwatched inboxes of the world before anyone has time to call it finished."
-order: 0
+order: 1
 metaRow:
   role: "Lead Designer"
   team: "DEPT"

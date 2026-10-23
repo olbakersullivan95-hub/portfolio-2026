@@ -7,4 +7,10 @@ export default defineConfig({
     // Enable sharp for image optimization
     service: { entrypoint: 'astro/assets/services/sharp' },
   },
+  // /work moved to /portfolio — keep old links/bookmarks working
+  redirects: {
+    '/work': '/portfolio',
+    '/work/sandbox': '/portfolio/sandbox',
+    '/work/[slug]': '/portfolio/[slug]',
+  },
 });

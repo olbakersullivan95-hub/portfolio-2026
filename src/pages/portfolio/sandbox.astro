@@ -45,7 +45,7 @@ const liveUrl = "https://squareup.com/us/es/industry";
   <!-- Case study content -->
   <div class="sb-content" id="sb-content">
     <div class="case-study-wrap">
-      <a href="/work" class="back-btn">← Portfolio</a>
+      <a href="/portfolio" class="back-btn">← Portfolio</a>
 
     <!-- ── Section 1: original layout, scanner moment ── -->
     <div class="case-study-grid">
@@ -117,7 +117,7 @@ const liveUrl = "https://squareup.com/us/es/industry";
     <div class="carousel__track-wrap">
       <div class="carousel__track" id="carousel-track">
         {otherProjects.map((project) => (
-          <a href={`/work/${project.slug}`} class="carousel__item">
+          <a href={`/portfolio/${project.slug}`} class="carousel__item">
             <img src={project.data.coverImage} alt={project.data.title} loading="lazy" />
             <span>{project.data.title}</span>
           </a>

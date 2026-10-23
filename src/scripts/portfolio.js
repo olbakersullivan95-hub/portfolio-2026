@@ -12,9 +12,9 @@ const closeBtn = document.getElementById('case-study-close');
 const carousel = document.getElementById('portfolio-carousel');
 const carouselTrack = document.getElementById('carousel-track');
 
-// On /work/index.astro: grid items are in the DOM, case study is empty
-// On /work/[slug].astro: case study is pre-rendered, carousel is pre-rendered
-// This script handles the client-side transitions for /work/index.astro
+// On /portfolio/index.astro: grid items are in the DOM, case study is empty
+// On /portfolio/[slug].astro: case study is pre-rendered, carousel is pre-rendered
+// This script handles the client-side transitions for /portfolio/index.astro
 
 if (grid) {
   // Grid item click — transition to case study
@@ -25,14 +25,14 @@ if (grid) {
 
     const slug = item.dataset.slug;
     await openCaseStudy(slug);
-    history.pushState({ slug }, '', `/work/${slug}`);
+    history.pushState({ slug }, '', `/portfolio/${slug}`);
   });
 }
 
 if (closeBtn) {
   closeBtn.addEventListener('click', () => {
     closeToGrid();
-    history.pushState({}, '', '/work');
+    history.pushState({}, '', '/portfolio');
   });
 }
 
@@ -45,7 +45,7 @@ if (carouselTrack) {
 
     const slug = item.dataset.slug;
     await swapCaseStudy(slug);
-    history.pushState({ slug }, '', `/work/${slug}`);
+    history.pushState({ slug }, '', `/portfolio/${slug}`);
   });
 }
 
@@ -60,7 +60,7 @@ window.addEventListener('popstate', async (e) => {
 
 async function openCaseStudy(slug) {
   // Fetch case study content from the pre-rendered page
-  const res = await fetch(`/work/${slug}`);
+  const res = await fetch(`/portfolio/${slug}`);
   const html = await res.text();
   const doc = new DOMParser().parseFromString(html, 'text/html');
 
@@ -80,7 +80,7 @@ async function openCaseStudy(slug) {
 
 async function swapCaseStudy(slug) {
   // Same as openCaseStudy but without re-triggering the full open animation
-  const res = await fetch(`/work/${slug}`);
+  const res = await fetch(`/portfolio/${slug}`);
   const html = await res.text();
   const doc = new DOMParser().parseFromString(html, 'text/html');
 

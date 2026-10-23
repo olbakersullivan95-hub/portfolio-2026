@@ -21,7 +21,7 @@ stats:
   - value: "Hi-Fi"
     label: Figma Prototype Delivered
 opener: "Some ideas are volcanic and arrive enormous and already whole like something forced up from below the earth and this was one of them and we rebuilt the thing from the ground up and the evening redness spread out over it when it was done."
-order: 12
+order: 13
 skills:
   - "Product design (UX/UI)"
   - "Accessibility-first design"

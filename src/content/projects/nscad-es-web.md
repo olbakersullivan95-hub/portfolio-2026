@@ -21,7 +21,7 @@ stats:
   - value: "Solo"
     label: Freelance Build
 opener: "Streams do not stop at city limits and neither did this work and what began as a brief became a brand system and the thing ran from Halifax to Toronto and it is still running now like the first fire which contains within it all fires ever to be."
-order: 10
+order: 11
 skills:
   - "Web design & hand-coded CSS"
   - "Brand identity application"

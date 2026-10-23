@@ -21,7 +21,7 @@ stats:
   - value: "1M+"
     label: App downloads (Android)
 opener: "Eighty thousand people need to find a seat they have never sat in before, in a building the size of a small city. Someone has to decide whose voice speaks first, and that decision has to hold for every one of the seventy-two screens that follow it."
-order: 14
+order: 0
 metaRow:
   role: "UX/UI Lead"
   team: "THE·TEAM"

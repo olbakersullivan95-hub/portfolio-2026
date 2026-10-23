@@ -21,7 +21,7 @@ stats:
   - value: "1"
     label: 3D Printed Prototype
 opener: "Sound does not announce itself and is invisible until you stop to measure it and I went somewhere quiet and held out my numbed hands toward it and took the full measure of how loud the world actually is when no one is listening."
-order: 8
+order: 9
 intro: |
   For my Master of Design thesis at NSCAD University, I asked a question that sits at the intersection of sustainability, health, and design: how can design create awareness around sound pollution and its effects on human wellbeing?
 

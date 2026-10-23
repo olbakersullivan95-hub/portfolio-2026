@@ -21,7 +21,7 @@ stats:
   - value: "3 day"
     label: Oreo Cop the Drop Turnaround
 opener: "Some valleys are wide and move slow but this one ran on a week-and-a-half cycle and the embers paled and deepened and paled and deepened without ceasing and if you looked away the moment was already gone and there was only the next one burning in its place."
-order: 7
+order: 8
 skills:
   - "Social design & animation"
   - "Campaign content strategy"

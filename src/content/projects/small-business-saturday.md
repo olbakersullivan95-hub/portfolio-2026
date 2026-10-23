@@ -21,7 +21,7 @@ stats:
   - value: "Live"
     label: on pages.ebay.com
 opener: "The summit does not reveal itself until you are standing upon it and looking back at the whole terrible distance of the climb and only then do you see that the modules hold and the thing is finished and it was the continual looking from the peak that made it so."
-order: 6
+order: 7
 skills:
   - "Landing page UX"
   - "Content hierarchy & restructure"

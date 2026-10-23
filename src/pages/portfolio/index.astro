@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
 const projects = (await getCollection('projects'))
-  .filter((p) => p.slug !== 'everbloom' && p.slug !== 'wheelhouse')
+  .filter((p) => p.slug !== 'everbloom' && p.slug !== 'wheelhouse' && p.slug !== 'nscad-es-web')
   .sort((a, b) => a.data.order - b.data.order);
 
 const labelBySlug: Record<string, string> = {
@@ -36,7 +36,7 @@ const companyBySlug: Record<string, string> = {
   <div class="grid grid--portfolio" id="portfolio-grid">
     {projects.map((project) => (
       <a
-        href={`/work/${project.slug}`}
+        href={`/portfolio/${project.slug}`}
         class="grid__item"
         data-categories={JSON.stringify(project.data.categories)}
       >

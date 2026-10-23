@@ -21,7 +21,7 @@ stats:
   - value: "310x"
     label: BoF NPA Increase
 opener: "A desert looks infinite until someone maps it and then it is only the work itself, the long and burning traverse of it, and the party moves out into the inordinate day and does not stop and does not look back at what recedes behind them in the alkali white."
-order: 1
+order: 2
 skills:
   - "Systems thinking"
   - "Production"

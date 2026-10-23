@@ -12,7 +12,7 @@ const allProjects = (await getCollection('projects')).sort(
   (a, b) => a.data.order - b.data.order
 );
 const activeProject = allProjects.find((p) => p.slug === slug);
-if (!activeProject) return Astro.redirect('/work');
+if (!activeProject) return Astro.redirect('/portfolio');
 
 const otherProjects = allProjects.filter((p) => p.slug !== slug);
 const { data } = activeProject;
@@ -48,7 +48,7 @@ function isVideo(src: string) {
   )}
 
   <div class:list={['case-study-wrap', { 'cs-page-content': !!data.opener }]} id="cs-page-content">
-    <a href="/work" class="back-btn">← Portfolio</a>
+    <a href="/portfolio" class="back-btn">← Portfolio</a>
 
     <!-- ── Section 1: scanner moment ── -->
     <div class="case-study-grid">
@@ -276,7 +276,7 @@ function isVideo(src: string) {
     <div class="carousel__track-wrap">
       <div class="carousel__track" id="carousel-track">
         {otherProjects.map((project) => (
-          <a href={`/work/${project.slug}`} class="carousel__item">
+          <a href={`/portfolio/${project.slug}`} class="carousel__item">
             <img src={project.data.coverImage} alt={project.data.title} loading="lazy" />
             <span>{project.data.title}</span>
           </a>
