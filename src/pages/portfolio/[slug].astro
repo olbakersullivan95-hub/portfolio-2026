@@ -41,7 +41,7 @@ function isVideo(src: string) {
   {data.opener && (
     <div class="cs-opener-overlay" id="cs-opener-overlay" aria-hidden="true">
       <div class="cs-opener-wrap">
-        <p class="cs-opener-text" id="cs-opener-text" data-opener={data.opener}></p>
+        <p class="cs-opener-text" id="cs-opener-text" data-opener={data.opener} data-hold-ms={data.openerHoldMs}></p>
         <button class="cs-skip" id="cs-skip">Skip →</button>
       </div>
     </div>
@@ -367,7 +367,7 @@ function isVideo(src: string) {
   const skipBtn  = document.getElementById('cs-skip');
 
   const WORD_STAGGER = 0.08;
-  const HOLD_MS      = 1200;
+  const DEFAULT_HOLD_MS = 1200;
 
   function dismiss() {
     overlay?.classList.add('is-leaving');
@@ -380,12 +380,13 @@ function isVideo(src: string) {
   if (overlay && openerEl) {
     const words = (openerEl.dataset.opener ?? '').split(' ');
     const totalRevealMs = words.length * WORD_STAGGER * 1000 + 400;
+    const holdMs = openerEl.dataset.holdMs ? parseInt(openerEl.dataset.holdMs, 10) : DEFAULT_HOLD_MS;
 
     openerEl.innerHTML = words
       .map((w, i) => `<span class="cs-word" style="animation-delay:${(i * WORD_STAGGER).toFixed(2)}s">${w}</span>`)
       .join(' ');
 
-    setTimeout(dismiss, totalRevealMs + HOLD_MS);
+    setTimeout(dismiss, totalRevealMs + holdMs);
     skipBtn?.addEventListener('click', dismiss);
   } else {
     // No opener — make content visible immediately

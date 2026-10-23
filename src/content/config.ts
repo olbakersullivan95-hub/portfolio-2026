@@ -13,6 +13,7 @@ const projects = defineCollection({
     images: z.array(z.object({ src: z.string(), alt: z.string() })),
     stats: z.array(z.object({ value: z.string(), label: z.string() })).optional(),
     opener: z.string().optional(),
+    openerHoldMs: z.number().optional(),
     order: z.number(),
     // ── v1 content fields (legacy, optional) ──
     intro: z.string().optional(),
