@@ -188,8 +188,16 @@ img { display: block; width: 100%; }
   padding: 10px 0;
 }
 
-/* Dim non-hovered to 50% */
-.grid--home:has(.grid__item:hover) .grid__item:not(:hover) {
+/* Dim non-hovered to 50% — mouse/trackpad only, avoids touch devices
+   getting a "stuck" hover state after a tap that dims the whole grid */
+@media (hover: hover) and (pointer: fine) {
+  .grid--home:has(.grid__item:hover) .grid__item:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+/* Touch: plain grid at rest, opacity only changes on the item actually being tapped */
+.grid--home .grid__item:active {
   opacity: 0.5;
 }
 
