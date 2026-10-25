@@ -42,7 +42,7 @@ theMoment: |
 whatICarryForward: |
   Setting rules early is faster than reviewing taste late. Once the system was clear, every screen had a strong sense of belonging in the wider system. That's why, when the complete UX and UI came together, I was proud to have leadership approve it on first review with no changes, a first for that team — helped along by a creative director who was relentless about getting both sides to agree on where those lines sat before a single screen got designed. The plugins pushed that further so that when the system itself lives in the tooling, consistency didn't need to depend on anyone's memory, including mine.
 
-  The other lesson is about inheritance. Working inside an existing brand family doesn't mean repeating it. The strongest version of this app takes the parent system's logic and gives it a venue of its own, and that's the posture I bring into any project that has to extend something bigger than itself rather than invent in a vacuum.
+  The other lesson is about inheritance. Working inside an existing brand family doesn't mean repeating it. The strongest version of this app takes the parent system's logic and gives it a venue of its own.
 liveUrl: "https://attstadium.com/stadium-info/app/"
 liveUrlLabel: 'See it in action. Download the app and select the "Stadium" button →'
 liveUrlInline: true
