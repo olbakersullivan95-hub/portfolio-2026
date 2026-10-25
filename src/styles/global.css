@@ -238,7 +238,13 @@ img { display: block; width: 100%; }
   line-height: 1.4;
 }
 
-.grid--portfolio:has(.grid__item:hover) .grid__item:not(:hover) {
+@media (hover: hover) and (pointer: fine) {
+  .grid--portfolio:has(.grid__item:hover) .grid__item:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+.grid--portfolio .grid__item:active {
   opacity: 0.5;
 }
 
