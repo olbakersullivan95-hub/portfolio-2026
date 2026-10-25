@@ -20,7 +20,7 @@ stats:
     label: Screens designed in 1.5 weeks
   - value: "1M+"
     label: App downloads (Android)
-opener: "Eighty thousand people need to find a seat they have never sat in before, in a building the size of a small city. Someone has to decide whose voice speaks first, and that decision has to hold for every one of the seventy-two screens that follow it."
+opener: "Eighty thousand people need to find a seat they have never sat in before, in a building the size of a small city. One voice speaks first, then another, and that decision has to hold for what follows."
 order: 0
 openerHoldMs: 6200
 metaRow:
