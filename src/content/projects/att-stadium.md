@@ -40,9 +40,11 @@ theMoment: |
 
   A dual-brand system lives or dies on consistency, so I built tooling to enforce it instead of relying on anyone remembering the rules: an auto-frame plugin that frames any selected imagery or shape to spec in one action, and a brand font replacer that updates every element in a file to its correct AT&T Sans or AT&T Aleck Sans weight in one click. For the kiosk especially, I prototyped key flows in Claude to feel them at the pace they'd actually be used, standing, in a crowd, often in a hurry.
 whatICarryForward: |
-  Setting rules early is faster than reviewing taste late. Once the system was clear, every screen had a strong sense of belonging in the wider system. That's why, when the complete UX and UI came together, I was proud to have leadership approve it on first review with no changes, a first for that team — helped along by a creative director who was relentless about getting both sides to agree on where those lines sat before a single screen got designed. The plugins pushed that further so that when the system itself lives in the tooling, consistency didn't need to depend on anyone's memory, including mine.
+  Setting rules early is faster than reviewing taste late. Once the system was clear, every screen had a strong sense of belonging in the wider system. That's why, when the complete UX and UI came together, I was proud to have leadership approve it on first review with no changes, and led by an incredible creative director who was relentless about getting both sides to agree on where those lines sat before a single screen was designed.
 
-  The other lesson is about inheritance. Working inside an existing brand family doesn't mean repeating it. The strongest version of this app takes the parent system's logic and gives it a venue of its own.
+  An example of one small element that carries a lot of the experience is the primary call to action, "Connect to my seat". This element is half module, half button. The whole surface is tappable, so it reads as both an action and a place that belongs to you. At one point, we explored static text and a separate button on the right, but a fan tapping the words would get nothing back. Once a seat is entered, the same spot becomes "Go to My Seat," the home base every route returns to.
+
+  I also really enjoyed adapting and inheriting core brand elements. Working inside an existing brand family doesn't necessarily mean repeating it. The strongest version of this app takes the adapted parent system and gives it a venue of its own.
 liveUrl: "https://attstadium.com/stadium-info/app/"
 liveUrlLabel: 'See it in action. Download the app and select the "Stadium" button →'
 liveUrlInline: true
